@@ -1,0 +1,99 @@
+---
+layout: base.njk
+title: Home
+bodyWidth: wide
+---
+{% set featured = (collections.videos | reverse)[0] %}
+{% set recent = (collections.videos | reverse) %}
+
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Practical wellness, explained properly.</h1>
+    <div class="hero-actions">
+      <a class="hero-cta hero-cta--primary" href="{{ '/videos/' | url }}">Browse all Video Articles</a>
+      <a class="hero-cta hero-cta--ghost" href="https://www.youtube.com/channel/UC6FA5t7Ywxjj-76uYSppNWQ" target="_blank" rel="noopener">Watch on YouTube</a>
+    </div>
+  </div>
+  <div class="hero-mark" aria-hidden="true">
+    <img src="{{ '/assets/logo.jpg' | url }}" alt="">
+  </div>
+</section>
+
+
+<section class="about-band">
+  <div class="about-copy">
+    <h2>About Living Foundations</h2>
+    <p>Living Foundations is run by Karan Chandra Jugran — a health and wellness coach who teaches fitness form, breathwork, recovery, and mind-body practices.</p>
+    <div class="about-links">
+      <a href="https://www.instagram.com/karan_chandra_jugran/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://x.com/KJugran53679" target="_blank" rel="noopener">X</a>
+      <a href="/course/" target="_blank" rel="noopener">PT Course</a>
+    </div>
+  </div>
+</section>
+
+{% if featured %}
+<section class="featured">
+  <span class="featured-label" id="featured-label">Latest</span>
+  <a class="featured-card" id="featured-card" href="{{ featured.url | url }}">
+    <span class="featured-thumb">
+      <img id="featured-thumb-img" src="https://i.ytimg.com/vi/{{ featured.data.youtubeId }}/hqdefault.jpg" alt="{{ featured.data.title }} — video thumbnail" loading="lazy">
+      <span class="video-card-play" aria-hidden="true"></span>
+    </span>
+    <span class="featured-body">
+      <span class="video-card-tag" id="featured-tag">{{ featured.data.category }}</span>
+      <span class="featured-title" id="featured-title">{{ featured.data.title }}</span>
+      <span class="featured-excerpt" id="featured-excerpt">{{ featured.templateContent | excerpt(220) | safe }}</span>
+    </span>
+  </a>
+</section>
+
+<script type="application/json" id="featured-pool">
+[
+{% for video in recent %}
+  {"url": {{ (video.url | url) | dump | safe }}, "title": {{ video.data.title | dump | safe }}, "category": {{ video.data.category | dump | safe }}, "youtubeId": {{ video.data.youtubeId | dump | safe }}, "excerpt": {{ video.templateContent | excerpt(220) | dump | safe }}}{% if not loop.last %},{% endif %}
+{% endfor %}
+]
+</script>
+<script>
+(function () {
+  var pool = JSON.parse(document.getElementById("featured-pool").textContent);
+  if (!pool.length) return;
+  var pick = pool[Math.floor(Math.random() * pool.length)];
+
+  document.getElementById("featured-label").textContent = "Featured";
+  document.getElementById("featured-card").href = pick.url;
+  document.getElementById("featured-thumb-img").src = "https://i.ytimg.com/vi/" + pick.youtubeId + "/hqdefault.jpg";
+  document.getElementById("featured-thumb-img").alt = pick.title + " — video thumbnail";
+  document.getElementById("featured-tag").textContent = pick.category;
+  document.getElementById("featured-title").textContent = pick.title;
+  document.getElementById("featured-excerpt").textContent = pick.excerpt;
+})();
+</script>
+{% endif %}
+
+<section class="section-intro section-intro--tight">
+  <h2>More Video Articles</h2>
+</section>
+
+<ul class="video-grid">
+  {% for video in recent %}
+  {% if loop.index > 1 and loop.index <= 7 %}
+  <li class="video-card" style="--stagger: {{ loop.index0 }}">
+    <a href="{{ video.url | url }}">
+      <span class="video-card-thumb">
+        <img src="https://i.ytimg.com/vi/{{ video.data.youtubeId }}/hqdefault.jpg" alt="{{ video.data.title }} — video thumbnail" loading="lazy">
+        <span class="video-card-play" aria-hidden="true"></span>
+      </span>
+      <span class="video-card-body">
+        <span class="video-card-tag">{{ video.data.category }}</span>
+        <span class="video-card-title">{{ video.data.title }}</span>
+        <span class="video-card-excerpt">{{ video.templateContent | excerpt | safe }}</span>
+      </span>
+    </a>
+  </li>
+  {% endif %}
+  {% endfor %}
+</ul>
+
+<p class="see-all"><a href="{{ '/videos/' | url }}">See all {{ collections.videos.length }} Video Articles &rarr;</a></p>

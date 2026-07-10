@@ -1,0 +1,140 @@
+/* ==========================================================================
+   search.css — search box + result count/empty state on /videos/.
+   Owned by: search agent. Only edit selectors below; don't touch other files.
+   ========================================================================== */
+
+.search-box {
+  position: relative;
+  max-width: 480px;
+  margin: 0 0 2rem;
+}
+
+.search-box input {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  border: 1px solid var(--sand);
+  border-radius: 10px;
+  background: var(--cream-alt);
+  color: var(--charcoal);
+  transition: border-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out), background-color 180ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .search-box input:hover {
+    border-color: var(--sand-dark);
+  }
+}
+
+.search-box::before {
+  content: "";
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  background-color: var(--sand-dark);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3C/svg%3E") center / contain no-repeat;
+  pointer-events: none;
+  transition: background-color 180ms var(--ease-out);
+}
+
+.search-box:focus-within::before {
+  background-color: var(--sage);
+}
+
+.search-box input::placeholder {
+  color: var(--sand-dark);
+}
+
+.search-box input:focus-visible {
+  outline: none;
+  border-color: var(--sage);
+  background: var(--cream);
+  box-shadow: 0 0 0 3px rgba(58, 74, 62, 0.16);
+}
+
+.search-count {
+  display: inline-block;
+  margin-top: 0.6rem;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--sage);
+  background: var(--sand);
+  border-radius: 100px;
+  min-height: 1.2em;
+}
+
+.search-count:empty {
+  display: block;
+  padding: 0;
+  background: none;
+}
+
+.search-empty {
+  text-align: center;
+  color: var(--sand-dark);
+  padding: 2rem 0;
+}
+
+/* Category filter chips */
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 2rem;
+}
+
+.chip {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--charcoal);
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 100px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  transition: background-color 160ms var(--ease-out), color 160ms var(--ease-out),
+    border-color 160ms var(--ease-out), transform 120ms var(--ease-out);
+}
+
+.chip.is-active {
+  background: var(--sage);
+  border-color: var(--sage);
+  color: var(--cream);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .chip:not(.is-active):hover {
+    border-color: var(--sage);
+    color: var(--sage);
+  }
+
+  .chip.is-active:hover {
+    background: var(--sage-light);
+    border-color: var(--sage-light);
+  }
+}
+
+.chip:active {
+  transform: scale(0.96);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .search-box input,
+  .search-box::before,
+  .chip {
+    transition: none;
+  }
+
+  .chip:active {
+    transform: none;
+  }
+}

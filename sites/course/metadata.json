@@ -1,0 +1,6 @@
+{
+  "name": "Personal Training Foundations",
+  "description": "Interactive learning platform for Personal Training Foundations — a practical coaching manual for coaches, trainers, and fitness enthusiasts by Kcj Jugran.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,427 @@
+/* ==========================================================================
+   application.css — PT application questionnaire.
+   Extends styles.css tokens (--cream, --sage, --ink, etc.) — no new
+   palette, no new radii. Linked from apply.html after styles.css.
+   ========================================================================== */
+
+.pt-app {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+  padding: 2.25rem 2rem;
+}
+
+@media (min-width: 640px) {
+  .pt-app {
+    padding: 3rem 3rem 2.75rem;
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Step transition
+   ----------------------------------------------------------------------- */
+
+.pt-app__step {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: pt-step-in 420ms var(--ease-out) forwards;
+}
+
+@keyframes pt-step-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.pt-app__step--outcome {
+  text-align: left;
+}
+
+/* -----------------------------------------------------------------------
+   Progress
+   ----------------------------------------------------------------------- */
+
+.pt-app__progress {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-bottom: 1.75rem;
+}
+
+.pt-app__progress-label {
+  flex-shrink: 0;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--sand-dark);
+  margin: 0;
+  text-align: right;
+}
+
+.pt-app__progress-bar {
+  flex: 1;
+  height: 3px;
+  border-radius: 100px;
+  background: var(--sand);
+  overflow: hidden;
+}
+
+.pt-app__progress-bar span {
+  display: block;
+  height: 100%;
+  background: var(--sage);
+  border-radius: 100px;
+  transition: width 320ms var(--ease-out);
+}
+
+/* -----------------------------------------------------------------------
+   Eyebrow / intro / body copy
+   ----------------------------------------------------------------------- */
+
+.pt-app__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin: 0 0 0.5rem;
+}
+
+.pt-app h2 {
+  font-size: clamp(1.4rem, 1.6vw + 1.05rem, 1.9rem);
+  margin-bottom: 0.75rem;
+}
+
+.pt-app__intro,
+.pt-app__body {
+  color: var(--charcoal);
+  font-size: 1rem;
+}
+
+.pt-app__hint {
+  color: var(--sand-dark);
+  font-size: 0.88rem;
+  margin: 0 0 0.9rem;
+}
+
+/* -----------------------------------------------------------------------
+   Fields
+   ----------------------------------------------------------------------- */
+
+.pt-app__fields {
+  display: grid;
+  gap: 1.75rem;
+  margin: 1.75rem 0;
+}
+
+.pt-app__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.pt-app__field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.pt-app input[type="text"],
+.pt-app input[type="email"],
+.pt-app input[type="tel"],
+.pt-app textarea {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  width: 100%;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.pt-app input[type="text"]:focus,
+.pt-app input[type="email"]:focus,
+.pt-app input[type="tel"]:focus,
+.pt-app textarea:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(58, 74, 62, 0.12);
+  outline: none;
+}
+
+.pt-app textarea {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.6;
+}
+
+.pt-app__checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: var(--charcoal);
+  cursor: pointer;
+}
+
+.pt-app__checkbox input {
+  margin-top: 0.25rem;
+  accent-color: var(--sage);
+  flex-shrink: 0;
+}
+
+/* -----------------------------------------------------------------------
+   Questions
+   ----------------------------------------------------------------------- */
+
+.pt-app__question {
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid var(--sand);
+}
+
+.pt-app__fields > .pt-app__question:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.pt-app__q-label {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+}
+
+.pt-app__options {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.75rem;
+}
+
+.pt-app__option {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  font-size: 0.96rem;
+  color: var(--charcoal);
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.pt-app__option:has(input:checked) {
+  border-color: var(--sage);
+  border-width: 1.5px;
+  padding: calc(0.8rem - 0.5px) calc(1rem - 0.5px);
+  background: rgba(58, 74, 62, 0.06);
+}
+
+/* Native input stays in the DOM (and tabbable) for accessibility, but is
+   visually hidden — the ::before dot/check below is the visible control. */
+.pt-app__option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  pointer-events: none;
+}
+
+.pt-app__option::before {
+  content: "";
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 0.05rem;
+  border: 1.5px solid var(--sand-dark);
+  background: var(--cream);
+  box-sizing: border-box;
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.pt-app__option:has(input[type="radio"])::before {
+  border-radius: 50%;
+}
+
+.pt-app__option:has(input[type="checkbox"])::before {
+  border-radius: 4px;
+}
+
+/* Selected radio: empty ring becomes a sage-filled dot. */
+.pt-app__option:has(input[type="radio"]:checked)::before {
+  border-color: var(--sage);
+  background: var(--sage);
+  box-shadow: inset 0 0 0 3px var(--cream);
+}
+
+/* Selected checkbox: sage fill + cream checkmark. */
+.pt-app__option:has(input[type="checkbox"]:checked)::before {
+  border-color: var(--sage);
+  background: var(--sage);
+}
+
+.pt-app__option:has(input[type="checkbox"]:checked)::after {
+  content: "";
+  position: absolute;
+  left: 1.32rem;
+  top: 0.62rem;
+  width: 5px;
+  height: 9px;
+  border: solid var(--cream);
+  border-width: 0 2px 2px 0;
+  transform: rotate(40deg);
+}
+
+.pt-app__option:has(input:focus-visible) {
+  outline: 2px solid var(--sage);
+  outline-offset: 2px;
+}
+
+.pt-app__option span {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pt-app__option:hover {
+    border-color: rgba(58, 74, 62, 0.35);
+  }
+
+  .pt-app__option:has(input:checked):hover {
+    border-color: var(--sage);
+  }
+}
+
+.pt-app__other-input {
+  flex-basis: 100%;
+  margin-top: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+}
+
+/* -----------------------------------------------------------------------
+   Errors
+   ----------------------------------------------------------------------- */
+
+.pt-app__error-box {
+  display: grid;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.pt-app__error {
+  color: var(--clay);
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------
+   Nav
+   ----------------------------------------------------------------------- */
+
+.pt-app__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pt-app__nav--single {
+  justify-content: flex-end;
+}
+
+/* -----------------------------------------------------------------------
+   Outcome screens
+   ----------------------------------------------------------------------- */
+
+.pt-app__plan-card {
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+}
+
+.pt-app__plan-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin: 0 0 0.35rem;
+}
+
+.pt-app__plan-value {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--ink);
+  margin: 0 0 0.4rem;
+}
+
+.pt-app__plan-note {
+  color: var(--charcoal);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.pt-app__outcome-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
+
+.pt-app__fine-print {
+  color: var(--sand-dark);
+  font-size: 0.82rem;
+  margin: 0 0 0.25rem;
+  max-width: 44ch;
+}
+
+.pt-app__decline-wrap {
+  margin-top: 1rem;
+}
+
+.pt-app__quiet-link {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--sand-dark);
+  font-size: 0.88rem;
+  text-decoration: underline;
+  cursor: pointer;
+  font-family: var(--font-sans);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .pt-app__quiet-link:hover {
+    color: var(--sage);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   Motion & accessibility
+   ----------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .pt-app__step {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .pt-app__progress-bar span {
+    transition: none !important;
+  }
+}

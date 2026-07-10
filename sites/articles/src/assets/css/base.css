@@ -1,0 +1,104 @@
+/* ==========================================================================
+   base.css — tokens, reset, typography, page shell, footer.
+   Owned by: core layout (do not add component-specific rules here).
+   ========================================================================== */
+
+:root {
+  --cream: #F9F8F6;
+  --cream-alt: #F2EFE9;
+  --sand: #E5E1DA;
+  --sand-dark: #8C8578;
+  --sage: #3A4A3E;
+  --sage-light: #4A5D4E;
+  --charcoal: #2C2C2C;
+  --ink: #1A1A1A;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  z-index: 10;
+  transition: top 160ms var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Page-width container. `main` is the narrow (article-reading) default;
+   `body.wide main` is used by list/grid pages (home, /videos/) so they
+   don't get stranded in a narrow column with huge empty gutters. */
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+body.wide main {
+  max-width: 1240px;
+}
+
+/* Shared tag-pill component — used on cards, the featured spotlight, and
+   the article page. Defined once here (not in cards.css/article.css) so
+   parallel edits to those files can't produce two conflicting versions. */
+
+.video-card-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 100px;
+  padding: 0.2rem 0.65rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

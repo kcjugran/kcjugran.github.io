@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book a Seminar — KC Jugran</title>
+<meta name="description" content="Bring KC Jugran to your gym, team, or event. Live, practical, no-jargon coaching workshops and talks. Send an inquiry.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kcjugran.github.io/hire-me/seminar.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<meta property="og:site_name" content="KC Jugran">
+<meta property="og:title" content="Book a Seminar — KC Jugran">
+<meta property="og:description" content="Bring KC Jugran to your gym, team, or event. Live, practical, no-jargon coaching workshops and talks.">
+<meta property="og:url" content="https://kcjugran.github.io/hire-me/seminar.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://kcjugran.github.io/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KC Jugran — holistic coaching">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book a Seminar — KC Jugran">
+<meta name="twitter:description" content="Bring KC Jugran to your gym, team, or event. Live, practical, no-jargon coaching workshops and talks.">
+<meta name="twitter:image" content="https://kcjugran.github.io/og-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="minimal-nav">
+  <div class="nav-inner">
+    <a class="nav-wordmark" href="index.html">KC Jugran</a>
+    <a class="back-link" href="index.html">&larr; Back to site</a>
+  </div>
+</header>
+
+<main id="main" class="apply-main">
+  <div class="apply-header">
+    <p class="eyebrow">Seminars &amp; Workshops</p>
+    <h1>Bring me to your gym, team, or event.</h1>
+    <p>For gyms, sports teams, corporate wellness programs, and coach groups who want live, practical, no-jargon training their people will actually use. Send the details below and I'll follow up directly — no auto-qualification, no gatekeeping.</p>
+  </div>
+
+  <!--
+    ============================================================
+    STATIC-SITE SUBMISSION — mailto fallback
+    ============================================================
+    This form uses the standard static-site trick: method="post"
+    enctype="text/plain" on a mailto: action opens the visitor's
+    email client with the field values pre-filled in the message
+    body. No server, no paid service, no API keys required.
+
+    UPGRADE PATH (when ready): swap the <form> action/method below
+    for either —
+      (a) Formspree free tier (https://formspree.io — ~50 free
+          submissions/month): action="https://formspree.io/f/xxxxx"
+          method="POST", remove enctype, keep the same field names.
+      (b) A Google Form embed: replace this whole <form> with an
+          <iframe> pointing at the published Google Form URL.
+    Either option is free and keeps this a static site.
+    ============================================================
+  -->
+  <!-- Placeholder contact address — replace with KC's real inbox -->
+  <form class="inquiry-form" action="mailto:hello@kcjugran.com?subject=Seminar%20Inquiry" method="post" enctype="text/plain">
+    <div class="form-field">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="Name" required autocomplete="name">
+    </div>
+    <div class="form-field">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="Email" required autocomplete="email">
+    </div>
+    <div class="form-field">
+      <label for="phone">Phone / WhatsApp (optional)</label>
+      <input type="tel" id="phone" name="Phone" autocomplete="tel">
+    </div>
+    <div class="form-field">
+      <label for="organization">Organization</label>
+      <input type="text" id="organization" name="Organization" required autocomplete="organization">
+    </div>
+    <div class="form-field">
+      <label for="city">City</label>
+      <input type="text" id="city" name="City" required autocomplete="address-level2">
+    </div>
+    <div class="form-field">
+      <label for="audience-type">Audience type</label>
+      <select id="audience-type" name="Audience type" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="Gym / studio clients">Gym / studio clients</option>
+        <option value="Sports team">Sports team</option>
+        <option value="Corporate / workplace">Corporate / workplace</option>
+        <option value="Coach or trainer group">Coach or trainer group</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="audience-size">Expected audience size</label>
+      <input type="number" id="audience-size" name="Audience size" min="1" inputmode="numeric">
+    </div>
+    <div class="form-field">
+      <label for="dates">Preferred dates</label>
+      <input type="text" id="dates" name="Preferred dates" placeholder="e.g. late September, or flexible">
+    </div>
+    <div class="form-field form-field--wide">
+      <label for="topics">What do you want covered?</label>
+      <textarea id="topics" name="Topics wanted" rows="4" placeholder="Movement fundamentals, coaching staff training, injury prevention, etc."></textarea>
+    </div>
+    <button type="submit" class="btn btn-pill btn-primary">Send Inquiry</button>
+  </form>
+</main>
+
+<footer class="site-footer minimal-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; <span id="footer-year">2026</span> KC Jugran. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

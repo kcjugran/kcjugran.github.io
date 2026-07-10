@@ -1,0 +1,877 @@
+/* ==========================================================================
+   styles.css — KC Jugran hiring site. One bundled stylesheet, organized
+   into logical sections. Palette/type/component tokens lifted from the
+   Living Foundations brand (base.css, cards.css, hero.css) per PLAN.md §4.
+   ========================================================================== */
+
+/* -----------------------------------------------------------------------
+   1. Tokens & reset
+   ----------------------------------------------------------------------- */
+
+:root {
+  --cream: #F9F8F6;
+  --cream-alt: #F2EFE9;
+  --sand: #E5E1DA;
+  --sand-dark: #8C8578;
+  --sage: #3A4A3E;
+  --sage-light: #4A5D4E;
+  --clay: #B5613A;
+  --charcoal: #2C2C2C;
+  --ink: #1A1A1A;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+
+  --shadow-card: 0 1px 2px rgba(26, 26, 26, 0.05), 0 6px 16px -12px rgba(26, 26, 26, 0.18);
+  --shadow-card-hover: 0 14px 28px -14px rgba(26, 26, 26, 0.3), 0 2px 5px -1px rgba(26, 26, 26, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.25;
+  margin: 0 0 0.75rem;
+}
+
+p { margin: 0 0 1rem; }
+
+a { color: inherit; }
+
+img { max-width: 100%; display: block; }
+
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  z-index: 20;
+  text-decoration: none;
+  transition: top 160ms var(--ease-out);
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.6rem;
+}
+
+/* Shared tag-pill, matches Living Foundations brand component. */
+.video-card-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 100px;
+  padding: 0.2rem 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 3.5rem 0;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 60ch;
+  margin: 0 auto 2.5rem;
+}
+
+.section-intro h2 {
+  font-size: clamp(1.75rem, 2vw + 1.2rem, 2.5rem);
+}
+
+.section-intro p {
+  color: var(--sand-dark);
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------
+   2. Buttons
+   ----------------------------------------------------------------------- */
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  cursor: pointer;
+  border: none;
+  transition: color 160ms ease, border-color 160ms ease,
+    background-color 160ms ease, transform 160ms var(--ease-out),
+    box-shadow 200ms var(--ease-out);
+}
+
+.btn-pill {
+  padding: 0.85rem 1.85rem;
+  border-radius: 100px;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  color: var(--cream);
+  background: var(--sage);
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.08);
+}
+
+.btn-secondary {
+  color: var(--sage);
+  background: transparent;
+  border: 1.5px solid var(--sage);
+}
+
+.btn-invert {
+  color: var(--sage);
+  background: var(--cream);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover {
+    background: var(--sage-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 26, 26, 0.14);
+  }
+
+  .btn-secondary:hover {
+    background: var(--sage);
+    color: var(--cream);
+    transform: translateY(-2px);
+  }
+
+  .btn-invert:hover {
+    background: var(--cream-alt);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 26, 26, 0.18);
+  }
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* -----------------------------------------------------------------------
+   3. Nav
+   ----------------------------------------------------------------------- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav-wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: none;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .nav-links a:hover {
+    color: var(--sage);
+  }
+}
+
+.nav-cta {
+  padding: 0.6rem 1.35rem;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+
+@media (min-width: 760px) {
+  .nav-links { display: flex; }
+}
+
+/* Minimal nav — apply.html / seminar.html (no exits, momentum) */
+
+.minimal-nav {
+  background: var(--cream);
+  border-bottom: 1px solid var(--sand);
+}
+
+.minimal-nav .nav-inner {
+  justify-content: space-between;
+}
+
+.back-link {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--sage);
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .back-link:hover { color: var(--sage-light); }
+}
+
+/* -----------------------------------------------------------------------
+   4. Hero
+   ----------------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 0 4.5rem;
+  isolation: isolate;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -10% -2rem -6%;
+  z-index: -1;
+  background:
+    radial-gradient(60% 70% at 20% 30%, var(--cream-alt) 0%, transparent 70%),
+    radial-gradient(45% 55% at 85% 75%, var(--sand) 0%, transparent 75%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-copy {
+  flex: 1;
+  min-width: 0;
+  max-width: 640px;
+}
+
+.hero h1 {
+  font-size: clamp(2.1rem, 4.5vw + 1rem, 3.75rem);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+}
+
+.hero-sub {
+  color: var(--sand-dark);
+  font-size: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem);
+  max-width: 46ch;
+  margin-bottom: 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.hero-mark {
+  flex-shrink: 0;
+  width: 260px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: none;
+}
+
+/* Portrait photos: crop to the card's 4:5 frame instead of stretching —
+   the source headshot is square, so without this the face distorts. */
+.hero-mark img,
+.about-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  height: auto;
+  object-fit: cover;
+  object-position: top center;
+}
+
+@media (min-width: 860px) {
+  .hero-mark { display: block; }
+}
+
+/* -----------------------------------------------------------------------
+   5. About / Meet KC band
+   ----------------------------------------------------------------------- */
+
+.about-band {
+  position: relative;
+}
+
+.about-band::before {
+  content: "";
+  position: absolute;
+  inset: 0 -6%;
+  z-index: -1;
+  background: var(--cream-alt);
+  border-radius: 24px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 760px) {
+  .about-grid {
+    grid-template-columns: 260px 1fr;
+  }
+}
+
+.about-photo {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  max-width: 260px;
+}
+
+.about-copy h2 {
+  font-size: clamp(1.5rem, 1.5vw + 1.1rem, 2rem);
+}
+
+.about-copy p {
+  color: var(--charcoal);
+  font-size: 1.02rem;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.about-links a {
+  text-decoration: none;
+  color: var(--sage);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-links a:hover {
+    color: var(--sage-light);
+    border-color: var(--sage-light);
+  }
+}
+
+/* -----------------------------------------------------------------------
+   6. Offer cards (the fork)
+   ----------------------------------------------------------------------- */
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 760px) {
+  .offer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.offer-card {
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: card-in 480ms var(--ease-out) forwards;
+  animation-delay: calc(var(--stagger, 0) * 40ms);
+  transition: box-shadow 260ms var(--ease-out), transform 260ms var(--ease-out);
+}
+
+@keyframes card-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .offer-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+}
+
+.offer-card h3 {
+  font-size: 1.5rem;
+}
+
+.offer-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.offer-bullets li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.95rem;
+  color: var(--charcoal);
+}
+
+.offer-bullets li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sage);
+}
+
+.offer-card > .btn {
+  align-self: flex-start;
+}
+
+/* -----------------------------------------------------------------------
+   7. How it works
+   ----------------------------------------------------------------------- */
+
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  counter-reset: step;
+}
+
+@media (min-width: 760px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.step {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: card-in 480ms var(--ease-out) forwards;
+  animation-delay: calc(var(--stagger, 0) * 40ms);
+}
+
+.step-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--sage);
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+}
+
+.step p {
+  color: var(--sand-dark);
+  font-size: 0.95rem;
+  max-width: 32ch;
+  margin: 0 auto;
+}
+
+.scarcity-note {
+  text-align: center;
+  max-width: 52ch;
+  margin: 0 auto;
+  color: var(--sage);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* -----------------------------------------------------------------------
+   8. Results / testimonials
+   ----------------------------------------------------------------------- */
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+}
+
+.testimonial-card {
+  margin: 0;
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  padding: 1.75rem;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: card-in 480ms var(--ease-out) forwards;
+  animation-delay: calc(var(--stagger, 0) * 40ms);
+}
+
+.testimonial-card blockquote {
+  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.testimonial-card figcaption {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--sand-dark);
+}
+
+/* -----------------------------------------------------------------------
+   9. Free resources strip
+   ----------------------------------------------------------------------- */
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .resource-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.resource-card {
+  display: block;
+  text-decoration: none;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: card-in 480ms var(--ease-out) forwards;
+  animation-delay: calc(var(--stagger, 0) * 40ms);
+  transition: box-shadow 260ms var(--ease-out), transform 260ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .resource-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  .resource-card:hover h3 {
+    color: var(--sage);
+  }
+}
+
+.resource-card h3 {
+  font-size: 1.05rem;
+  transition: color 200ms ease;
+}
+
+.resource-card p {
+  color: var(--sand-dark);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* -----------------------------------------------------------------------
+   10. Final CTA band
+   ----------------------------------------------------------------------- */
+
+.cta-band {
+  background: var(--sage);
+  border-radius: 24px;
+  margin: 1rem 0;
+}
+
+.cta-band-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.cta-band-inner p {
+  color: var(--cream);
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 1.5vw + 1rem, 1.75rem);
+  margin-bottom: 1.5rem;
+}
+
+/* -----------------------------------------------------------------------
+   11. Footer
+   ----------------------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--sand);
+  margin-top: 1rem;
+}
+
+.footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.footer-links a,
+.footer-social a {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-links a:hover,
+  .footer-social a:hover {
+    color: var(--sage);
+  }
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: var(--sand-dark);
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  order: 3;
+}
+
+@media (min-width: 760px) {
+  .footer-copy {
+    width: auto;
+    text-align: right;
+    order: 0;
+  }
+}
+
+.minimal-footer .footer-inner {
+  justify-content: center;
+}
+
+.minimal-footer .footer-copy {
+  text-align: center;
+}
+
+/* -----------------------------------------------------------------------
+   12. apply.html / seminar.html specific
+   ----------------------------------------------------------------------- */
+
+.apply-main {
+  max-width: 720px;
+  padding-top: 3.5rem;
+  padding-bottom: 4rem;
+}
+
+.apply-header h1 {
+  font-size: clamp(1.9rem, 3vw + 1.2rem, 2.75rem);
+}
+
+.apply-header p {
+  color: var(--charcoal);
+  font-size: 1.05rem;
+  max-width: 60ch;
+}
+
+.pt-application-mount {
+  margin-top: 2.5rem;
+}
+
+.placeholder-panel {
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.placeholder-panel h2 {
+  font-size: 1.4rem;
+}
+
+.placeholder-panel p {
+  color: var(--charcoal);
+  max-width: 46ch;
+  margin: 0 auto 1.5rem;
+}
+
+/* Seminar inquiry form */
+
+.inquiry-form {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .inquiry-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-field--wide {
+  grid-column: 1 / -1;
+}
+
+.form-field label {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: var(--font-sans);
+  font-size: 0.98rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 10px;
+  padding: 0.75rem 0.9rem;
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(58, 74, 62, 0.12);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.inquiry-form .btn {
+  grid-column: 1 / -1;
+  justify-self: start;
+}
+
+/* -----------------------------------------------------------------------
+   13. Motion & accessibility
+   ----------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+
+  .offer-card,
+  .step,
+  .testimonial-card,
+  .resource-card,
+  .btn {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}

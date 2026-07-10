@@ -1,0 +1,31 @@
+---
+layout: base.njk
+---
+{% set parts = content | splitTakeaways %}
+<article class="video-page">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="{{ '/' | url }}">Home</a>
+    <span aria-hidden="true">/</span>
+    <a href="{{ '/videos/' | url }}">Video Articles</a>
+    <span aria-hidden="true">/</span>
+    <span aria-current="page">{{ title }}</span>
+  </nav>
+  {% if category %}<span class="video-card-tag">{{ category }}</span>{% endif %}
+  <h1>{{ title }}</h1>
+  <div class="video-embed">
+    <iframe
+      src="https://www.youtube.com/embed/{{ youtubeId }}"
+      title="{{ title }}"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="article-body">
+    {{ parts.main | safe }}
+  </div>
+  {% if parts.takeaways %}
+  <div class="takeaways-card">
+    {{ parts.takeaways | safe }}
+  </div>
+  {% endif %}
+</article>

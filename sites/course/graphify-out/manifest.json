@@ -1,0 +1,1067 @@
+{
+  "metadata.json": {
+    "mtime": 1782919824.1738186,
+    "ast_hash": "bfcc1e7f693446ce5e1551e42be4c449",
+    "semantic_hash": "bfcc1e7f693446ce5e1551e42be4c449"
+  },
+  "package.json": {
+    "mtime": 1782974235.4366112,
+    "ast_hash": "a2126520ee90d50aed37d3e31a88c316",
+    "semantic_hash": "a2126520ee90d50aed37d3e31a88c316"
+  },
+  "scripts/generate-seo.ts": {
+    "mtime": 1782974235.4866097,
+    "ast_hash": "0e39591548281a54e3ef4b013d0b3429",
+    "semantic_hash": "0e39591548281a54e3ef4b013d0b3429"
+  },
+  "server.ts": {
+    "mtime": 1782919824.759947,
+    "ast_hash": "a74b96cd63f121934044cca327982a2a",
+    "semantic_hash": "a74b96cd63f121934044cca327982a2a"
+  },
+  "src/App.tsx": {
+    "mtime": 1782985965.0520475,
+    "ast_hash": "89d847abe4d4f70fe80443613e51a5a1",
+    "semantic_hash": "89d847abe4d4f70fe80443613e51a5a1"
+  },
+  "src/components/ChapterQuiz.tsx": {
+    "mtime": 1782919824.7628174,
+    "ast_hash": "16798de61c513c808a940c06a252855c",
+    "semantic_hash": "16798de61c513c808a940c06a252855c"
+  },
+  "src/components/FigureVideoButton.tsx": {
+    "mtime": 1782927186.198185,
+    "ast_hash": "8edbc42a15179550e08d4a488cd27db8",
+    "semantic_hash": "8edbc42a15179550e08d4a488cd27db8"
+  },
+  "src/components/InteractiveAssessments.tsx": {
+    "mtime": 1782953129.4571083,
+    "ast_hash": "623c27000696fa7fd2971e2b9db30bec",
+    "semantic_hash": "623c27000696fa7fd2971e2b9db30bec"
+  },
+  "src/components/KnowledgeTest.tsx": {
+    "mtime": 1782922610.7111053,
+    "ast_hash": "531ee733983c228862c81ce5df34bfac",
+    "semantic_hash": "531ee733983c228862c81ce5df34bfac"
+  },
+  "src/data/chaptersData.ts": {
+    "mtime": 1782955718.770332,
+    "ast_hash": "bf209c63f76ed4f53bc5d1d0b99cae9c",
+    "semantic_hash": "bf209c63f76ed4f53bc5d1d0b99cae9c"
+  },
+  "src/data/quizData.ts": {
+    "mtime": 1782919824.771217,
+    "ast_hash": "021b03bc86113d4f6e811389376e4417",
+    "semantic_hash": "021b03bc86113d4f6e811389376e4417"
+  },
+  "src/main.tsx": {
+    "mtime": 1782919824.7732322,
+    "ast_hash": "a0bcc3ffa5e95e1965f94969ab488283",
+    "semantic_hash": "a0bcc3ffa5e95e1965f94969ab488283"
+  },
+  "src/vite-env.d.ts": {
+    "mtime": 1782922118.485943,
+    "ast_hash": "8f68c27c3fc38817b2726b20e2d4f1ee",
+    "semantic_hash": "8f68c27c3fc38817b2726b20e2d4f1ee"
+  },
+  "tsconfig.json": {
+    "mtime": 1782919824.7738144,
+    "ast_hash": "aca6cdac13db39d03d9b95866834d84f",
+    "semantic_hash": "aca6cdac13db39d03d9b95866834d84f"
+  },
+  "vite.config.ts": {
+    "mtime": 1782920252.7509487,
+    "ast_hash": "c25511fdb3f827a9a4e363d94ba52cce",
+    "semantic_hash": "c25511fdb3f827a9a4e363d94ba52cce"
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1782920252.7499492,
+    "ast_hash": "1b365b483f29adefb138cadd3b27bf3a",
+    "semantic_hash": "1b365b483f29adefb138cadd3b27bf3a"
+  },
+  "CLAUDE.MD": {
+    "mtime": 1782381445.4459279,
+    "ast_hash": "ac2e447781b213cbab2e2d1d7c8650d4",
+    "semantic_hash": "ac2e447781b213cbab2e2d1d7c8650d4"
+  },
+  "README.md": {
+    "mtime": 1782919824.1708236,
+    "ast_hash": "ecf4b36e9b01704a642dfd01b7f329d4",
+    "semantic_hash": "ecf4b36e9b01704a642dfd01b7f329d4"
+  },
+  "index.html": {
+    "mtime": 1782919824.1728222,
+    "ast_hash": "0887788599e0813db0f6822e952dd721",
+    "semantic_hash": "0887788599e0813db0f6822e952dd721"
+  },
+  "public/robots.txt": {
+    "mtime": 1782968646.1321967,
+    "ast_hash": "3c11564ed29777596fedbe7d2a6068ab",
+    "semantic_hash": "3c11564ed29777596fedbe7d2a6068ab"
+  },
+  "public/assets/images/back_squat_1782525146400.jpg": {
+    "mtime": 1782985571.1768403,
+    "ast_hash": "169d545be72f55f6d5e51fea5e6351fd",
+    "semantic_hash": "169d545be72f55f6d5e51fea5e6351fd"
+  },
+  "public/assets/images/barbell_zercher_squat_1782524679634.jpg": {
+    "mtime": 1782985571.1798422,
+    "ast_hash": "6c1d45efd74602530167846e5b7a2543",
+    "semantic_hash": "6c1d45efd74602530167846e5b7a2543"
+  },
+  "public/assets/images/bench_press_1782525201097.jpg": {
+    "mtime": 1782985571.181841,
+    "ast_hash": "8f209109ca5d0203c4e53ed5867c348f",
+    "semantic_hash": "8f209109ca5d0203c4e53ed5867c348f"
+  },
+  "public/assets/images/cable_zercher_squat_1782524654649.jpg": {
+    "mtime": 1782985571.1840458,
+    "ast_hash": "b8b4aa405d4c361d48a6c8b60fc2905f",
+    "semantic_hash": "b8b4aa405d4c361d48a6c8b60fc2905f"
+  },
+  "public/assets/images/farmer_carries_1782525172817.jpg": {
+    "mtime": 1782985571.1869783,
+    "ast_hash": "55e09b0899210d44a9d51c4054f18e45",
+    "semantic_hash": "55e09b0899210d44a9d51c4054f18e45"
+  },
+  "public/assets/images/front_squat_1782525133400.jpg": {
+    "mtime": 1782985571.1892028,
+    "ast_hash": "dac51cc1182dd930d7de687850753802",
+    "semantic_hash": "dac51cc1182dd930d7de687850753802"
+  },
+  "public/assets/images/goblet_squat_1782524692061.jpg": {
+    "mtime": 1782985571.190844,
+    "ast_hash": "f5f0c6279740e7ad7ac6b56efd4a3ecf",
+    "semantic_hash": "f5f0c6279740e7ad7ac6b56efd4a3ecf"
+  },
+  "public/assets/images/hero_gym_coaching_1782501730722.jpg": {
+    "mtime": 1782985571.1928506,
+    "ast_hash": "5d4340e7b7924a26b447b9a4b6a43c4b",
+    "semantic_hash": "5d4340e7b7924a26b447b9a4b6a43c4b"
+  },
+  "public/assets/images/high_incline_press_1782525229619.jpg": {
+    "mtime": 1782985571.1948464,
+    "ast_hash": "de25f5067310a6a2b9c9f7e59c24210b",
+    "semantic_hash": "de25f5067310a6a2b9c9f7e59c24210b"
+  },
+  "public/assets/images/inverted_row_1782525269820.jpg": {
+    "mtime": 1782985571.19697,
+    "ast_hash": "16d725d2b52436c0b80966c1befc0264",
+    "semantic_hash": "16d725d2b52436c0b80966c1befc0264"
+  },
+  "public/assets/images/neutral_spine_align_1782501767776.jpg": {
+    "mtime": 1782985571.1989381,
+    "ast_hash": "ae3fd252dc7dad3832ca8395dd9d4bd5",
+    "semantic_hash": "ae3fd252dc7dad3832ca8395dd9d4bd5"
+  },
+  "public/assets/images/one_arm_db_row_1782525286071.jpg": {
+    "mtime": 1782985571.2004704,
+    "ast_hash": "8bad20bd2d9347b4a9c76affeee4e5de",
+    "semantic_hash": "8bad20bd2d9347b4a9c76affeee4e5de"
+  },
+  "public/assets/images/pike_push_up_1782525249637.jpg": {
+    "mtime": 1782985571.2020743,
+    "ast_hash": "ca96b04577cbe82a4e795343ea12d319",
+    "semantic_hash": "ca96b04577cbe82a4e795343ea12d319"
+  },
+  "public/assets/images/plank_1782525300491.jpg": {
+    "mtime": 1782985571.203846,
+    "ast_hash": "4b98ff77aab24411457cdf90b8dbba5e",
+    "semantic_hash": "4b98ff77aab24411457cdf90b8dbba5e"
+  },
+  "public/assets/images/poliquin_press_1782525214766.jpg": {
+    "mtime": 1782985571.2058437,
+    "ast_hash": "88b3f7f98f5009cd8399f022534342e6",
+    "semantic_hash": "88b3f7f98f5009cd8399f022534342e6"
+  },
+  "public/assets/images/push_up_1782525186012.jpg": {
+    "mtime": 1782985571.2068455,
+    "ast_hash": "f4da824bf25da1b29183c92c4887a28f",
+    "semantic_hash": "f4da824bf25da1b29183c92c4887a28f"
+  },
+  "public/assets/images/reverse_cable_deadlift_1782525159945.jpg": {
+    "mtime": 1782985571.2088428,
+    "ast_hash": "1635adbd963cd779274f1d9e81031407",
+    "semantic_hash": "1635adbd963cd779274f1d9e81031407"
+  },
+  "public/assets/images/reverse_crunch_1782525317277.jpg": {
+    "mtime": 1782985571.2104566,
+    "ast_hash": "81b569dc2317a5e997d203e01f0e2b94",
+    "semantic_hash": "81b569dc2317a5e997d203e01f0e2b94"
+  },
+  "public/assets/images/romanian_deadlift_1782524709202.jpg": {
+    "mtime": 1782985571.2119505,
+    "ast_hash": "14d49eddf524d306c39f6f9403b88f1a",
+    "semantic_hash": "14d49eddf524d306c39f6f9403b88f1a"
+  },
+  "public/assets/images/spider_curl_1782524666543.jpg": {
+    "mtime": 1782985571.213631,
+    "ast_hash": "345a7b22863d8ed2105af166ed25fcb2",
+    "semantic_hash": "345a7b22863d8ed2105af166ed25fcb2"
+  },
+  "public/assets/images/tibialis_raise_1782525331042.jpg": {
+    "mtime": 1782985571.2151964,
+    "ast_hash": "6169d6c2cd832718dd3b6b289186609b",
+    "semantic_hash": "6169d6c2cd832718dd3b6b289186609b"
+  },
+  "public/assets/images/v1/img001.jpeg": {
+    "mtime": 1782985571.2178462,
+    "ast_hash": "3b5237585083421956c0fbca7b80fa93",
+    "semantic_hash": "3b5237585083421956c0fbca7b80fa93"
+  },
+  "public/assets/images/v1/img002.jpeg": {
+    "mtime": 1782985571.2188492,
+    "ast_hash": "f50ce7e06d3018b73814f5c68350675f",
+    "semantic_hash": "f50ce7e06d3018b73814f5c68350675f"
+  },
+  "public/assets/images/v1/img003.png": {
+    "mtime": 1782985571.2209382,
+    "ast_hash": "abe6750869a27201e21443636ec372f7",
+    "semantic_hash": "abe6750869a27201e21443636ec372f7"
+  },
+  "public/assets/images/v1/img004.jpeg": {
+    "mtime": 1782985571.221951,
+    "ast_hash": "812fde7d3f08b19d88a4e3b186408eb0",
+    "semantic_hash": "812fde7d3f08b19d88a4e3b186408eb0"
+  },
+  "public/assets/images/v1/img005.jpeg": {
+    "mtime": 1782985571.223066,
+    "ast_hash": "743d954fe2de536e58dfa3ed035c9bd2",
+    "semantic_hash": "743d954fe2de536e58dfa3ed035c9bd2"
+  },
+  "public/assets/images/v1/img006.jpeg": {
+    "mtime": 1782985571.223848,
+    "ast_hash": "28694d517b5ff3da5c699a87007f5c0b",
+    "semantic_hash": "28694d517b5ff3da5c699a87007f5c0b"
+  },
+  "public/assets/images/v1/img007.jpeg": {
+    "mtime": 1782985571.225851,
+    "ast_hash": "ee8fda183ac53b1daffc0c7775a40d66",
+    "semantic_hash": "ee8fda183ac53b1daffc0c7775a40d66"
+  },
+  "public/assets/images/v1/img008.jpeg": {
+    "mtime": 1782985571.2262487,
+    "ast_hash": "95d47fff636c44a7ebafac43b11f12bb",
+    "semantic_hash": "95d47fff636c44a7ebafac43b11f12bb"
+  },
+  "public/assets/images/v1/img009.png": {
+    "mtime": 1782985571.2288451,
+    "ast_hash": "5f746043f66509e8fad2c5cbe16e839f",
+    "semantic_hash": "5f746043f66509e8fad2c5cbe16e839f"
+  },
+  "public/assets/images/v1/img010.jpeg": {
+    "mtime": 1782985571.2298458,
+    "ast_hash": "4b42170ecd18b2bf3226330505554e25",
+    "semantic_hash": "4b42170ecd18b2bf3226330505554e25"
+  },
+  "public/assets/images/v1/img011.jpeg": {
+    "mtime": 1782985571.2313807,
+    "ast_hash": "60116247a032831b53c081213cad8922",
+    "semantic_hash": "60116247a032831b53c081213cad8922"
+  },
+  "public/assets/images/v1/img012.jpeg": {
+    "mtime": 1782985571.2318447,
+    "ast_hash": "05176cf043d29735478da8c3ec50fd71",
+    "semantic_hash": "05176cf043d29735478da8c3ec50fd71"
+  },
+  "public/assets/images/v1/img013.jpeg": {
+    "mtime": 1782985571.232844,
+    "ast_hash": "4c2294720382939e94a834d946341a40",
+    "semantic_hash": "4c2294720382939e94a834d946341a40"
+  },
+  "public/assets/images/v1/img014.jpeg": {
+    "mtime": 1782985571.2345505,
+    "ast_hash": "b46fa94fb3fd54e358d21ac49c06f76d",
+    "semantic_hash": "b46fa94fb3fd54e358d21ac49c06f76d"
+  },
+  "public/assets/images/v1/img015.jpeg": {
+    "mtime": 1782985571.235845,
+    "ast_hash": "00c5af6f8c74471b94b766e2c10de6c2",
+    "semantic_hash": "00c5af6f8c74471b94b766e2c10de6c2"
+  },
+  "public/assets/images/v1/img016.jpeg": {
+    "mtime": 1782985571.2369854,
+    "ast_hash": "be852ffc1ceec27ea8b1c66b2db3da70",
+    "semantic_hash": "be852ffc1ceec27ea8b1c66b2db3da70"
+  },
+  "public/assets/images/v1/img017.jpeg": {
+    "mtime": 1782985571.238253,
+    "ast_hash": "a998931c62f7ea9084ddb02dacaa0187",
+    "semantic_hash": "a998931c62f7ea9084ddb02dacaa0187"
+  },
+  "public/assets/images/v1/img018.jpeg": {
+    "mtime": 1782985571.2392595,
+    "ast_hash": "808f64d70c54dd1d7528ac753b8132f9",
+    "semantic_hash": "808f64d70c54dd1d7528ac753b8132f9"
+  },
+  "public/assets/images/v1/img019.jpeg": {
+    "mtime": 1782985571.2402277,
+    "ast_hash": "ff40aa505297f7079f1d5663b0fa7e9d",
+    "semantic_hash": "ff40aa505297f7079f1d5663b0fa7e9d"
+  },
+  "public/assets/images/v1/img020.jpeg": {
+    "mtime": 1782985571.2408981,
+    "ast_hash": "4684db9cc775360fa0f0305f29249ccc",
+    "semantic_hash": "4684db9cc775360fa0f0305f29249ccc"
+  },
+  "public/assets/images/v1/img021.jpeg": {
+    "mtime": 1782985571.242058,
+    "ast_hash": "cc76a776c4e0c0116d393a440ca440a0",
+    "semantic_hash": "cc76a776c4e0c0116d393a440ca440a0"
+  },
+  "public/assets/images/v1/img022.jpeg": {
+    "mtime": 1782985571.2428489,
+    "ast_hash": "6793389ee0ac68487b3205d60882d62f",
+    "semantic_hash": "6793389ee0ac68487b3205d60882d62f"
+  },
+  "public/assets/images/v1/img023.jpeg": {
+    "mtime": 1782985571.2438471,
+    "ast_hash": "f342479650cfdc7db062325a929f535e",
+    "semantic_hash": "f342479650cfdc7db062325a929f535e"
+  },
+  "public/assets/images/v1/img024.jpeg": {
+    "mtime": 1782985571.2459471,
+    "ast_hash": "64fbd395e0e9cd680bc3eb3082956b36",
+    "semantic_hash": "64fbd395e0e9cd680bc3eb3082956b36"
+  },
+  "public/assets/images/v1/img025.jpeg": {
+    "mtime": 1782985571.2468483,
+    "ast_hash": "73ae6db97b2939b725d1ad044c1040c9",
+    "semantic_hash": "73ae6db97b2939b725d1ad044c1040c9"
+  },
+  "public/assets/images/v1/img026.jpeg": {
+    "mtime": 1782985571.247844,
+    "ast_hash": "5f5d2070d1c8d508a73350f7386ea8bf",
+    "semantic_hash": "5f5d2070d1c8d508a73350f7386ea8bf"
+  },
+  "public/assets/images/v1/img027.jpeg": {
+    "mtime": 1782985571.2488458,
+    "ast_hash": "b328d6060f6fe5493d29af87e6e13e41",
+    "semantic_hash": "b328d6060f6fe5493d29af87e6e13e41"
+  },
+  "public/assets/images/v1/img028.jpeg": {
+    "mtime": 1782985571.2498453,
+    "ast_hash": "b88c9b59ffcc5f06f6d9c200cde111fc",
+    "semantic_hash": "b88c9b59ffcc5f06f6d9c200cde111fc"
+  },
+  "public/assets/images/v1/img029.jpeg": {
+    "mtime": 1782985571.2508538,
+    "ast_hash": "41fb792375e9628b74bc78eca331b521",
+    "semantic_hash": "41fb792375e9628b74bc78eca331b521"
+  },
+  "public/assets/images/v1/img030.jpeg": {
+    "mtime": 1782985571.2528918,
+    "ast_hash": "d6330f8908b30297716ee9236cb0c07e",
+    "semantic_hash": "d6330f8908b30297716ee9236cb0c07e"
+  },
+  "public/assets/images/v1/img031.jpeg": {
+    "mtime": 1782985571.2538483,
+    "ast_hash": "dc019e9ce6dce9cea67cf18269c9f782",
+    "semantic_hash": "dc019e9ce6dce9cea67cf18269c9f782"
+  },
+  "public/assets/images/v1/img032.jpeg": {
+    "mtime": 1782985571.2552533,
+    "ast_hash": "0a65a08050a3b9bc41dc747dbccdf942",
+    "semantic_hash": "0a65a08050a3b9bc41dc747dbccdf942"
+  },
+  "public/assets/images/v1/img033.png": {
+    "mtime": 1782985571.257841,
+    "ast_hash": "dd60a308aa10947e47aa6a6b53015aa5",
+    "semantic_hash": "dd60a308aa10947e47aa6a6b53015aa5"
+  },
+  "public/assets/images/v1/img034.jpeg": {
+    "mtime": 1782985571.260229,
+    "ast_hash": "e5eb0347c809fa7dfdb27acc2fa1d5c9",
+    "semantic_hash": "e5eb0347c809fa7dfdb27acc2fa1d5c9"
+  },
+  "public/assets/images/v1/img035.png": {
+    "mtime": 1782985571.2620327,
+    "ast_hash": "e200b05efcbfd9c91340bc5884caad56",
+    "semantic_hash": "e200b05efcbfd9c91340bc5884caad56"
+  },
+  "public/assets/images/v1/img036.png": {
+    "mtime": 1782985571.2638462,
+    "ast_hash": "2322e4b47f72518079847ec43c34c908",
+    "semantic_hash": "2322e4b47f72518079847ec43c34c908"
+  },
+  "public/assets/images/v1/img037.jpeg": {
+    "mtime": 1782985571.2648473,
+    "ast_hash": "5319fac494d5daf66ab896b6c03367c0",
+    "semantic_hash": "5319fac494d5daf66ab896b6c03367c0"
+  },
+  "public/assets/images/v1/img038.jpeg": {
+    "mtime": 1782985571.2659724,
+    "ast_hash": "a1398122553908b02eb8158c5e9283a9",
+    "semantic_hash": "a1398122553908b02eb8158c5e9283a9"
+  },
+  "public/assets/images/v1/img039.jpeg": {
+    "mtime": 1782985571.266843,
+    "ast_hash": "35ab0dc22fae6299b42270827459dad1",
+    "semantic_hash": "35ab0dc22fae6299b42270827459dad1"
+  },
+  "public/assets/images/v1/img040.jpeg": {
+    "mtime": 1782985571.268023,
+    "ast_hash": "f2ef05a1a10e0c398c0aa5bcf5da08c3",
+    "semantic_hash": "f2ef05a1a10e0c398c0aa5bcf5da08c3"
+  },
+  "public/assets/images/v1/img041.png": {
+    "mtime": 1782985571.269844,
+    "ast_hash": "2b4bf5b384bf5f60af8b657345db3859",
+    "semantic_hash": "2b4bf5b384bf5f60af8b657345db3859"
+  },
+  "public/assets/images/v1/img042.jpeg": {
+    "mtime": 1782985571.2711236,
+    "ast_hash": "74ec54a0e4f7979964791a27cb31bb3e",
+    "semantic_hash": "74ec54a0e4f7979964791a27cb31bb3e"
+  },
+  "public/assets/images/v1/img043.jpeg": {
+    "mtime": 1782985571.2721262,
+    "ast_hash": "688d3d1fc578a7a6824e1631fe8e4647",
+    "semantic_hash": "688d3d1fc578a7a6824e1631fe8e4647"
+  },
+  "public/assets/images/v1/img044.jpeg": {
+    "mtime": 1782985571.272843,
+    "ast_hash": "2aecb99c251899d7ffad0ea4d4218ba0",
+    "semantic_hash": "2aecb99c251899d7ffad0ea4d4218ba0"
+  },
+  "public/assets/images/v1/img045.jpeg": {
+    "mtime": 1782985571.2738454,
+    "ast_hash": "f3e5642b7ddc5c8a2ff77293daa4b85f",
+    "semantic_hash": "f3e5642b7ddc5c8a2ff77293daa4b85f"
+  },
+  "public/assets/images/v1/img046.jpeg": {
+    "mtime": 1782985571.274843,
+    "ast_hash": "e3568df98f9958aee194fe2ebdffc8aa",
+    "semantic_hash": "e3568df98f9958aee194fe2ebdffc8aa"
+  },
+  "public/assets/images/v1/img047.jpeg": {
+    "mtime": 1782985571.275844,
+    "ast_hash": "a50747329f3a414733c7a224f39f3437",
+    "semantic_hash": "a50747329f3a414733c7a224f39f3437"
+  },
+  "public/assets/images/v1/img048.jpeg": {
+    "mtime": 1782985571.2768435,
+    "ast_hash": "f4b20e3fb8b6b9df4a6b08f8f4e7a4e8",
+    "semantic_hash": "f4b20e3fb8b6b9df4a6b08f8f4e7a4e8"
+  },
+  "public/assets/images/v1/img049.jpeg": {
+    "mtime": 1782985571.2778466,
+    "ast_hash": "9592fc62a0830d8a8ae9fa1bedc1c7cb",
+    "semantic_hash": "9592fc62a0830d8a8ae9fa1bedc1c7cb"
+  },
+  "public/assets/images/v1/img050.jpeg": {
+    "mtime": 1782985571.279278,
+    "ast_hash": "e53534f7fc2a7008b7babde7512232d0",
+    "semantic_hash": "e53534f7fc2a7008b7babde7512232d0"
+  },
+  "public/assets/images/v1/img051.jpeg": {
+    "mtime": 1782985571.2798438,
+    "ast_hash": "08b7fb461c38232d1da39779e9cf5411",
+    "semantic_hash": "08b7fb461c38232d1da39779e9cf5411"
+  },
+  "public/assets/images/v1/img052.png": {
+    "mtime": 1782985571.2841275,
+    "ast_hash": "40acc3b4f201da5d91b140a81ad3bcd0",
+    "semantic_hash": "40acc3b4f201da5d91b140a81ad3bcd0"
+  },
+  "public/assets/images/v1/img053.jpeg": {
+    "mtime": 1782985571.285701,
+    "ast_hash": "cab44d29d5d19872254fca768227bb88",
+    "semantic_hash": "cab44d29d5d19872254fca768227bb88"
+  },
+  "public/assets/images/v1/img054.jpeg": {
+    "mtime": 1782985571.2868457,
+    "ast_hash": "081ac936d93217ac77dd5f69cb89f9da",
+    "semantic_hash": "081ac936d93217ac77dd5f69cb89f9da"
+  },
+  "public/assets/images/v1/img055.jpeg": {
+    "mtime": 1782985571.287851,
+    "ast_hash": "d5fbdedccffb777f17de79d7826a0213",
+    "semantic_hash": "d5fbdedccffb777f17de79d7826a0213"
+  },
+  "public/assets/images/v1/img056.png": {
+    "mtime": 1782985571.2908418,
+    "ast_hash": "89216810612d252d48f037ee6ea076a5",
+    "semantic_hash": "89216810612d252d48f037ee6ea076a5"
+  },
+  "public/assets/images/v1/img057.jpeg": {
+    "mtime": 1782985571.2918458,
+    "ast_hash": "ab79700f5b9e6f011405df04ed726711",
+    "semantic_hash": "ab79700f5b9e6f011405df04ed726711"
+  },
+  "public/assets/images/v1/img058.jpeg": {
+    "mtime": 1782985571.2935846,
+    "ast_hash": "851472266c139e08d9d68929ea6f3c4a",
+    "semantic_hash": "851472266c139e08d9d68929ea6f3c4a"
+  },
+  "public/assets/images/v1/img059.jpeg": {
+    "mtime": 1782985571.294847,
+    "ast_hash": "5b03f8c3440b47149aa9fd57ef5a343a",
+    "semantic_hash": "5b03f8c3440b47149aa9fd57ef5a343a"
+  },
+  "public/assets/images/v1/img060.jpeg": {
+    "mtime": 1782985571.2962298,
+    "ast_hash": "56ddb110edac58c7bb288b0192a92e25",
+    "semantic_hash": "56ddb110edac58c7bb288b0192a92e25"
+  },
+  "public/assets/images/v1/img061.png": {
+    "mtime": 1782985571.2979052,
+    "ast_hash": "7ef0cf0ce01c20e08a36686648fcb9a8",
+    "semantic_hash": "7ef0cf0ce01c20e08a36686648fcb9a8"
+  },
+  "public/assets/images/v1/img062.jpeg": {
+    "mtime": 1782985571.3003287,
+    "ast_hash": "a728de5ca42ae1bcd0a9e6d9052dfb6b",
+    "semantic_hash": "a728de5ca42ae1bcd0a9e6d9052dfb6b"
+  },
+  "public/assets/images/v1/img063.jpeg": {
+    "mtime": 1782985571.3018486,
+    "ast_hash": "15bf6998ef124d83b4c58cfe4000ab50",
+    "semantic_hash": "15bf6998ef124d83b4c58cfe4000ab50"
+  },
+  "public/assets/images/v1/img064.jpeg": {
+    "mtime": 1782985571.3028464,
+    "ast_hash": "042d5f8e0444a0b2b9f95b389a2826fa",
+    "semantic_hash": "042d5f8e0444a0b2b9f95b389a2826fa"
+  },
+  "public/assets/images/v1/img065.jpeg": {
+    "mtime": 1782985571.3048463,
+    "ast_hash": "b73287e5c6896a20e9676f12a5a4454d",
+    "semantic_hash": "b73287e5c6896a20e9676f12a5a4454d"
+  },
+  "public/assets/images/v1/img066.jpeg": {
+    "mtime": 1782985571.3058472,
+    "ast_hash": "390e3eaad0d21dcb6158836f0b7e924d",
+    "semantic_hash": "390e3eaad0d21dcb6158836f0b7e924d"
+  },
+  "public/assets/images/v1/img067.jpeg": {
+    "mtime": 1782985571.3077059,
+    "ast_hash": "16a262084db3fdeb21dbf0a1a43163a1",
+    "semantic_hash": "16a262084db3fdeb21dbf0a1a43163a1"
+  },
+  "public/assets/images/v1/img068.jpeg": {
+    "mtime": 1782985571.3088453,
+    "ast_hash": "124d229a09db90a9aa93a333c6bcda0b",
+    "semantic_hash": "124d229a09db90a9aa93a333c6bcda0b"
+  },
+  "public/assets/images/v1/img069.jpeg": {
+    "mtime": 1782985571.3108857,
+    "ast_hash": "f51244882e0a5d1c733b252a433374ec",
+    "semantic_hash": "f51244882e0a5d1c733b252a433374ec"
+  },
+  "public/assets/images/v1/img070.jpeg": {
+    "mtime": 1782985571.3118472,
+    "ast_hash": "d6330f8908b30297716ee9236cb0c07e",
+    "semantic_hash": "d6330f8908b30297716ee9236cb0c07e"
+  },
+  "public/assets/images/v1/img071.jpeg": {
+    "mtime": 1782985571.3126986,
+    "ast_hash": "9627aedbd0a0f361d21f937a25a34118",
+    "semantic_hash": "9627aedbd0a0f361d21f937a25a34118"
+  },
+  "public/assets/images/v1/img072.jpeg": {
+    "mtime": 1782985571.314007,
+    "ast_hash": "21c4b93131139f9bbe63613802da0229",
+    "semantic_hash": "21c4b93131139f9bbe63613802da0229"
+  },
+  "public/assets/images/v1/img073.jpeg": {
+    "mtime": 1782985571.3148482,
+    "ast_hash": "dc019e9ce6dce9cea67cf18269c9f782",
+    "semantic_hash": "dc019e9ce6dce9cea67cf18269c9f782"
+  },
+  "public/assets/images/v1/img074.jpeg": {
+    "mtime": 1782985571.315851,
+    "ast_hash": "12ef463e7948d37c023a107491346f60",
+    "semantic_hash": "12ef463e7948d37c023a107491346f60"
+  },
+  "public/assets/images/v1/img075.jpeg": {
+    "mtime": 1782985571.3168426,
+    "ast_hash": "5885507ca6e2a1711c1d3374a02f820d",
+    "semantic_hash": "5885507ca6e2a1711c1d3374a02f820d"
+  },
+  "public/assets/images/v1/img076.jpeg": {
+    "mtime": 1782985571.3178718,
+    "ast_hash": "997fe40be965449620d1a3a4f485377e",
+    "semantic_hash": "997fe40be965449620d1a3a4f485377e"
+  },
+  "public/assets/images/v1/img077.jpeg": {
+    "mtime": 1782985571.3198528,
+    "ast_hash": "8e1b96cf5a7a8dacaa339a6cc68a9cd8",
+    "semantic_hash": "8e1b96cf5a7a8dacaa339a6cc68a9cd8"
+  },
+  "public/assets/images/v1/img078.jpeg": {
+    "mtime": 1782985571.3211627,
+    "ast_hash": "a8a7901a8d205d962b53f9895148a486",
+    "semantic_hash": "a8a7901a8d205d962b53f9895148a486"
+  },
+  "public/assets/images/v1/img079.png": {
+    "mtime": 1782985571.3238986,
+    "ast_hash": "1e7fb14a996467b685e4e15d69de22a6",
+    "semantic_hash": "1e7fb14a996467b685e4e15d69de22a6"
+  },
+  "public/assets/images/v1/img080.jpeg": {
+    "mtime": 1782985571.3248434,
+    "ast_hash": "305baa9e70c5541411f44870ca4278d9",
+    "semantic_hash": "305baa9e70c5541411f44870ca4278d9"
+  },
+  "public/assets/images/v1/img081.jpeg": {
+    "mtime": 1782985571.325843,
+    "ast_hash": "228d22934e9c6e5237787fb51a62fc84",
+    "semantic_hash": "228d22934e9c6e5237787fb51a62fc84"
+  },
+  "public/assets/images/v1/img082.jpeg": {
+    "mtime": 1782985571.327844,
+    "ast_hash": "0a65a08050a3b9bc41dc747dbccdf942",
+    "semantic_hash": "0a65a08050a3b9bc41dc747dbccdf942"
+  },
+  "public/assets/images/v1/img083.jpeg": {
+    "mtime": 1782985571.3290572,
+    "ast_hash": "8853e062c980b6457bdee660faf80fb9",
+    "semantic_hash": "8853e062c980b6457bdee660faf80fb9"
+  },
+  "public/assets/images/v1/img084.jpeg": {
+    "mtime": 1782985571.330431,
+    "ast_hash": "9f9aeaf9a08e178cf0c98954bf167081",
+    "semantic_hash": "9f9aeaf9a08e178cf0c98954bf167081"
+  },
+  "public/assets/images/v1/img085.jpeg": {
+    "mtime": 1782985571.3314412,
+    "ast_hash": "9c8ab18232433ce8d381ede5df108745",
+    "semantic_hash": "9c8ab18232433ce8d381ede5df108745"
+  },
+  "public/assets/images/v1/img086.jpeg": {
+    "mtime": 1782985571.3325548,
+    "ast_hash": "17c83d9f9505d12e85201965e58b73b6",
+    "semantic_hash": "17c83d9f9505d12e85201965e58b73b6"
+  },
+  "public/assets/images/v1/img087.jpeg": {
+    "mtime": 1782985571.3334801,
+    "ast_hash": "3e68d98dd648a208d179c4ccf80e023a",
+    "semantic_hash": "3e68d98dd648a208d179c4ccf80e023a"
+  },
+  "public/assets/images/v1/img088.jpeg": {
+    "mtime": 1782985571.334678,
+    "ast_hash": "55c5d2d93b236291292def3e4cdf8b31",
+    "semantic_hash": "55c5d2d93b236291292def3e4cdf8b31"
+  },
+  "public/assets/images/v1/img089.jpeg": {
+    "mtime": 1782985571.3358476,
+    "ast_hash": "9b4c38742344dac8b8af9a29c2b97a33",
+    "semantic_hash": "9b4c38742344dac8b8af9a29c2b97a33"
+  },
+  "public/assets/images/v1/img090.jpeg": {
+    "mtime": 1782985571.3358476,
+    "ast_hash": "27693002d6804e0d09b55977f56f426f",
+    "semantic_hash": "27693002d6804e0d09b55977f56f426f"
+  },
+  "public/assets/images/v1/img091.png": {
+    "mtime": 1782985571.337845,
+    "ast_hash": "f2d6fbbab5af8ce9934b61fafea8990d",
+    "semantic_hash": "f2d6fbbab5af8ce9934b61fafea8990d"
+  },
+  "public/assets/images/v1/img092.jpeg": {
+    "mtime": 1782985571.3388467,
+    "ast_hash": "af953eb229bcbb32b0f54114ce7895e0",
+    "semantic_hash": "af953eb229bcbb32b0f54114ce7895e0"
+  },
+  "public/assets/images/v1/img093.jpeg": {
+    "mtime": 1782985571.339848,
+    "ast_hash": "d177766049c7b80d2da1e13457f7e0c4",
+    "semantic_hash": "d177766049c7b80d2da1e13457f7e0c4"
+  },
+  "public/assets/images/v1/img094.jpeg": {
+    "mtime": 1782985571.3408425,
+    "ast_hash": "938562880c9453a8945999e4d3dfe9d4",
+    "semantic_hash": "938562880c9453a8945999e4d3dfe9d4"
+  },
+  "public/assets/images/v1/img095.jpeg": {
+    "mtime": 1782985571.3428457,
+    "ast_hash": "4ca512c06e36f9e11cc211d7f61703e9",
+    "semantic_hash": "4ca512c06e36f9e11cc211d7f61703e9"
+  },
+  "public/assets/images/v1/img096.jpeg": {
+    "mtime": 1782985571.3438425,
+    "ast_hash": "16cac2f4cd8f77b16bb9ab52bd328c5d",
+    "semantic_hash": "16cac2f4cd8f77b16bb9ab52bd328c5d"
+  },
+  "public/assets/images/v1/img097.jpeg": {
+    "mtime": 1782985571.344845,
+    "ast_hash": "b98e08741c9d816a3008db4c09b6acc6",
+    "semantic_hash": "b98e08741c9d816a3008db4c09b6acc6"
+  },
+  "public/assets/images/v1/img098.jpeg": {
+    "mtime": 1782985571.3458457,
+    "ast_hash": "57bb4ff795e0ea59495b77dcbcb94b4e",
+    "semantic_hash": "57bb4ff795e0ea59495b77dcbcb94b4e"
+  },
+  "public/assets/images/v1/img099.jpeg": {
+    "mtime": 1782985571.3473983,
+    "ast_hash": "542eab7a78503ffa2f373c447940107a",
+    "semantic_hash": "542eab7a78503ffa2f373c447940107a"
+  },
+  "public/assets/images/v1/img100.jpeg": {
+    "mtime": 1782985571.349007,
+    "ast_hash": "fb41efa9d3e68c6d1c18149985cc1dd3",
+    "semantic_hash": "fb41efa9d3e68c6d1c18149985cc1dd3"
+  },
+  "public/assets/images/v1/img101.jpeg": {
+    "mtime": 1782985571.3504026,
+    "ast_hash": "638fc0dc954661efef6e734488e78954",
+    "semantic_hash": "638fc0dc954661efef6e734488e78954"
+  },
+  "public/assets/images/v1/img102.png": {
+    "mtime": 1782985571.3588426,
+    "ast_hash": "2319327cad140547f3d491be7a537b7f",
+    "semantic_hash": "2319327cad140547f3d491be7a537b7f"
+  },
+  "public/assets/images/v1/stock-ab-exercise.jpeg": {
+    "mtime": 1782985571.3598442,
+    "ast_hash": "e80a62d447d2255d48912a6aaa9c4f8c",
+    "semantic_hash": "e80a62d447d2255d48912a6aaa9c4f8c"
+  },
+  "public/assets/images/v1/stock-bicep-curl.jpeg": {
+    "mtime": 1782985571.3618462,
+    "ast_hash": "f664fb6a92fe5f4ce8a8b2086bb8c940",
+    "semantic_hash": "f664fb6a92fe5f4ce8a8b2086bb8c940"
+  },
+  "public/assets/images/v1/stock-bulgarian-squat-v2.jpeg": {
+    "mtime": 1782985571.3633769,
+    "ast_hash": "1e9849ccc8dc81eb384f3d8d81228e49",
+    "semantic_hash": "1e9849ccc8dc81eb384f3d8d81228e49"
+  },
+  "public/assets/images/v1/stock-bulgarian-squat.jpeg": {
+    "mtime": 1782985571.3648462,
+    "ast_hash": "65f5edb2459bb821343d5cc5064d9342",
+    "semantic_hash": "65f5edb2459bb821343d5cc5064d9342"
+  },
+  "public/assets/images/v1/stock-cable-chest-press.jpeg": {
+    "mtime": 1782985571.3658454,
+    "ast_hash": "8b130b60b090a30383011907dd682a60",
+    "semantic_hash": "8b130b60b090a30383011907dd682a60"
+  },
+  "public/assets/images/v1/stock-cable-lateral-raise.jpeg": {
+    "mtime": 1782985571.367848,
+    "ast_hash": "fde4f8c897f4bf61029088ae5414efc4",
+    "semantic_hash": "fde4f8c897f4bf61029088ae5414efc4"
+  },
+  "public/assets/images/v1/stock-calf-raise.jpeg": {
+    "mtime": 1782985571.3698516,
+    "ast_hash": "6f2576f4cb62f8579073986b98f0f25b",
+    "semantic_hash": "6f2576f4cb62f8579073986b98f0f25b"
+  },
+  "public/assets/images/v1/stock-chest-exercise.jpeg": {
+    "mtime": 1782985571.3708453,
+    "ast_hash": "c1287bf8196950e36e658f73f3262264",
+    "semantic_hash": "c1287bf8196950e36e658f73f3262264"
+  },
+  "public/assets/images/v1/stock-core-exercise.jpeg": {
+    "mtime": 1782985571.3726397,
+    "ast_hash": "1d82810e8dd579cf4a909675acd54ad0",
+    "semantic_hash": "1d82810e8dd579cf4a909675acd54ad0"
+  },
+  "public/assets/images/v1/stock-deadlift.jpeg": {
+    "mtime": 1782985571.3738477,
+    "ast_hash": "86c4e9c516fdc817f7029f3b9c9f3dec",
+    "semantic_hash": "86c4e9c516fdc817f7029f3b9c9f3dec"
+  },
+  "public/assets/images/v1/stock-digestion-tips.jpeg": {
+    "mtime": 1782985571.3748412,
+    "ast_hash": "a9e619b247ab53818389080b2fbc1a28",
+    "semantic_hash": "a9e619b247ab53818389080b2fbc1a28"
+  },
+  "public/assets/images/v1/stock-dumbbell-row-v2.jpeg": {
+    "mtime": 1782985571.376847,
+    "ast_hash": "d0aefdb735205498362cab8226a0b2d1",
+    "semantic_hash": "d0aefdb735205498362cab8226a0b2d1"
+  },
+  "public/assets/images/v1/stock-dumbbell-row.jpeg": {
+    "mtime": 1782985571.3778453,
+    "ast_hash": "62537b85a02f1ece0c0fe38dc11544ba",
+    "semantic_hash": "62537b85a02f1ece0c0fe38dc11544ba"
+  },
+  "public/assets/images/v1/stock-fibre-vegetables.jpeg": {
+    "mtime": 1782985571.3788433,
+    "ast_hash": "c815baa91a2dfa6ad65f14c20da67e4f",
+    "semantic_hash": "c815baa91a2dfa6ad65f14c20da67e4f"
+  },
+  "public/assets/images/v1/stock-forearm-exercise-v2.jpeg": {
+    "mtime": 1782985571.3798456,
+    "ast_hash": "341f5e59aff6a3ec464a3fb639cae5db",
+    "semantic_hash": "341f5e59aff6a3ec464a3fb639cae5db"
+  },
+  "public/assets/images/v1/stock-forearm-exercise.jpeg": {
+    "mtime": 1782985571.3820858,
+    "ast_hash": "2a072dd2e069e23542d237f7abe6707e",
+    "semantic_hash": "2a072dd2e069e23542d237f7abe6707e"
+  },
+  "public/assets/images/v1/stock-front-squat.jpeg": {
+    "mtime": 1782985571.3828418,
+    "ast_hash": "0f6c0b544a0ddcd66b4df68da24a1f8d",
+    "semantic_hash": "0f6c0b544a0ddcd66b4df68da24a1f8d"
+  },
+  "public/assets/images/v1/stock-goblet-squat.jpeg": {
+    "mtime": 1782985571.3848476,
+    "ast_hash": "1f7a5ada7e6e39163de62c4c067f1a47",
+    "semantic_hash": "1f7a5ada7e6e39163de62c4c067f1a47"
+  },
+  "public/assets/images/v1/stock-gym-training.jpeg": {
+    "mtime": 1782985571.386624,
+    "ast_hash": "58ad26311e8b686e3c32e577d017a0e0",
+    "semantic_hash": "58ad26311e8b686e3c32e577d017a0e0"
+  },
+  "public/assets/images/v1/stock-health-assessment.jpeg": {
+    "mtime": 1782985571.387852,
+    "ast_hash": "420aed3b614b9201117a39acc2204d0c",
+    "semantic_hash": "420aed3b614b9201117a39acc2204d0c"
+  },
+  "public/assets/images/v1/stock-healthy-fats.jpeg": {
+    "mtime": 1782985571.3888478,
+    "ast_hash": "c3890add4a050dbbab748cd5c98f3c4d",
+    "semantic_hash": "c3890add4a050dbbab748cd5c98f3c4d"
+  },
+  "public/assets/images/v1/stock-healthy-snacks.jpeg": {
+    "mtime": 1782985571.3908434,
+    "ast_hash": "d3c718dad7b2d50f30f34d6a907f86bd",
+    "semantic_hash": "d3c718dad7b2d50f30f34d6a907f86bd"
+  },
+  "public/assets/images/v1/stock-hip-thrust.jpeg": {
+    "mtime": 1782985571.3928442,
+    "ast_hash": "1532cb0c80e867f767442deea92b8fa7",
+    "semantic_hash": "1532cb0c80e867f767442deea92b8fa7"
+  },
+  "public/assets/images/v1/stock-hyperextension.jpeg": {
+    "mtime": 1782985571.3932316,
+    "ast_hash": "cf1885db974566ccc50fbae3316db97d",
+    "semantic_hash": "cf1885db974566ccc50fbae3316db97d"
+  },
+  "public/assets/images/v1/stock-lat-pulldown-v2.jpeg": {
+    "mtime": 1782985571.3946893,
+    "ast_hash": "da59f7b2bb90ac25df18507c4cd26509",
+    "semantic_hash": "da59f7b2bb90ac25df18507c4cd26509"
+  },
+  "public/assets/images/v1/stock-lat-pulldown.jpeg": {
+    "mtime": 1782985571.3958416,
+    "ast_hash": "24acd8debb7e10ea6cd55b4bf07eba05",
+    "semantic_hash": "24acd8debb7e10ea6cd55b4bf07eba05"
+  },
+  "public/assets/images/v1/stock-leg-press.jpeg": {
+    "mtime": 1782985571.396975,
+    "ast_hash": "440a935177a07b6f0c1c3a2cee0c9076",
+    "semantic_hash": "440a935177a07b6f0c1c3a2cee0c9076"
+  },
+  "public/assets/images/v1/stock-lower-body-v2.jpeg": {
+    "mtime": 1782985571.3981638,
+    "ast_hash": "9879bf4abab4311494a7ad243e7160d5",
+    "semantic_hash": "9879bf4abab4311494a7ad243e7160d5"
+  },
+  "public/assets/images/v1/stock-lower-body.jpeg": {
+    "mtime": 1782985571.3991303,
+    "ast_hash": "65f5edb2459bb821343d5cc5064d9342",
+    "semantic_hash": "65f5edb2459bb821343d5cc5064d9342"
+  },
+  "public/assets/images/v1/stock-minerals-food.jpeg": {
+    "mtime": 1782985571.4008434,
+    "ast_hash": "61c270d644804e0ac5d4c25e25f33f76",
+    "semantic_hash": "61c270d644804e0ac5d4c25e25f33f76"
+  },
+  "public/assets/images/v1/stock-nordic-curl.jpeg": {
+    "mtime": 1782985571.4018457,
+    "ast_hash": "05f2393060daf4c8117a32539f0b3ea0",
+    "semantic_hash": "05f2393060daf4c8117a32539f0b3ea0"
+  },
+  "public/assets/images/v1/stock-one-arm-row-v2.jpeg": {
+    "mtime": 1782985571.4039273,
+    "ast_hash": "61d5de93d405350cb67e0dee20f903b6",
+    "semantic_hash": "61d5de93d405350cb67e0dee20f903b6"
+  },
+  "public/assets/images/v1/stock-one-arm-row.jpeg": {
+    "mtime": 1782985571.404843,
+    "ast_hash": "62537b85a02f1ece0c0fe38dc11544ba",
+    "semantic_hash": "62537b85a02f1ece0c0fe38dc11544ba"
+  },
+  "public/assets/images/v1/stock-overhead-press-v2.jpeg": {
+    "mtime": 1782985571.4068453,
+    "ast_hash": "cabe5a62632a59d4be13ec81169635b0",
+    "semantic_hash": "cabe5a62632a59d4be13ec81169635b0"
+  },
+  "public/assets/images/v1/stock-overhead-press.jpeg": {
+    "mtime": 1782985571.4088428,
+    "ast_hash": "fe94e5ad5341aa6f180b457918bdc7ec",
+    "semantic_hash": "fe94e5ad5341aa6f180b457918bdc7ec"
+  },
+  "public/assets/images/v1/stock-personal-training.jpeg": {
+    "mtime": 1782985571.4098446,
+    "ast_hash": "1c8c5dd182fb1402bde0101d375bcb29",
+    "semantic_hash": "1c8c5dd182fb1402bde0101d375bcb29"
+  },
+  "public/assets/images/v1/stock-pike-pushup.jpeg": {
+    "mtime": 1782985571.4108448,
+    "ast_hash": "90b4a800407be18dea93c916a7542b89",
+    "semantic_hash": "90b4a800407be18dea93c916a7542b89"
+  },
+  "public/assets/images/v1/stock-poliquin-press-v2.jpeg": {
+    "mtime": 1782985571.4128454,
+    "ast_hash": "111fe20f3f7050690bcdb1585f86c62a",
+    "semantic_hash": "111fe20f3f7050690bcdb1585f86c62a"
+  },
+  "public/assets/images/v1/stock-poliquin-press.jpeg": {
+    "mtime": 1782985571.4148438,
+    "ast_hash": "29d40373e83abe628de59343a755f1e6",
+    "semantic_hash": "29d40373e83abe628de59343a755f1e6"
+  },
+  "public/assets/images/v1/stock-preacher-curl.jpeg": {
+    "mtime": 1782985571.4158447,
+    "ast_hash": "664166aa60db1d9796c39236859d0e98",
+    "semantic_hash": "664166aa60db1d9796c39236859d0e98"
+  },
+  "public/assets/images/v1/stock-pull-exercises-v2.jpeg": {
+    "mtime": 1782985571.4178522,
+    "ast_hash": "dafaa4be6c51b7b63ee7cdca15b6f710",
+    "semantic_hash": "dafaa4be6c51b7b63ee7cdca15b6f710"
+  },
+  "public/assets/images/v1/stock-pull-exercises.jpeg": {
+    "mtime": 1782985571.4188457,
+    "ast_hash": "ac73e968e437e5dad6def3951fc40692",
+    "semantic_hash": "ac73e968e437e5dad6def3951fc40692"
+  },
+  "public/assets/images/v1/stock-pulley-pushdown.jpeg": {
+    "mtime": 1782985571.4208438,
+    "ast_hash": "7ab880d5817258393bfb7bdb95c4db97",
+    "semantic_hash": "7ab880d5817258393bfb7bdb95c4db97"
+  },
+  "public/assets/images/v1/stock-pullups-standard.jpeg": {
+    "mtime": 1782985571.422846,
+    "ast_hash": "04af4f3fa10cf2ac799abe0ebee2de83",
+    "semantic_hash": "04af4f3fa10cf2ac799abe0ebee2de83"
+  },
+  "public/assets/images/v1/stock-pullups-v2.jpeg": {
+    "mtime": 1782985571.4248445,
+    "ast_hash": "e32e0d1522c945fbd959cd69ac248909",
+    "semantic_hash": "e32e0d1522c945fbd959cd69ac248909"
+  },
+  "public/assets/images/v1/stock-pullups.jpeg": {
+    "mtime": 1782985571.4258447,
+    "ast_hash": "ac73e968e437e5dad6def3951fc40692",
+    "semantic_hash": "ac73e968e437e5dad6def3951fc40692"
+  },
+  "public/assets/images/v1/stock-push-exercises.jpeg": {
+    "mtime": 1782985571.4278462,
+    "ast_hash": "37fd92ff70c67bf30f8b6547b08a9ac2",
+    "semantic_hash": "37fd92ff70c67bf30f8b6547b08a9ac2"
+  },
+  "public/assets/images/v1/stock-reverse-crunch-v2.jpeg": {
+    "mtime": 1782985571.4291694,
+    "ast_hash": "2845ade79d1a8f9b9d77a3de7751af0a",
+    "semantic_hash": "2845ade79d1a8f9b9d77a3de7751af0a"
+  },
+  "public/assets/images/v1/stock-reverse-crunch.jpeg": {
+    "mtime": 1782985571.4303546,
+    "ast_hash": "58edb0b04b67aca09af148096edb885c",
+    "semantic_hash": "58edb0b04b67aca09af148096edb885c"
+  },
+  "public/assets/images/v1/stock-shallow-lat-row.jpeg": {
+    "mtime": 1782985571.4308426,
+    "ast_hash": "0f6c0b544a0ddcd66b4df68da24a1f8d",
+    "semantic_hash": "0f6c0b544a0ddcd66b4df68da24a1f8d"
+  },
+  "public/assets/images/v1/stock-shoulder-exercise-v2.jpeg": {
+    "mtime": 1782985571.4328432,
+    "ast_hash": "c4f170489678f8edc675ef1e72afe8eb",
+    "semantic_hash": "c4f170489678f8edc675ef1e72afe8eb"
+  },
+  "public/assets/images/v1/stock-shoulder-exercise.jpeg": {
+    "mtime": 1782985571.434011,
+    "ast_hash": "a11dec04fc9ff806f2a451c59b99eab2",
+    "semantic_hash": "a11dec04fc9ff806f2a451c59b99eab2"
+  },
+  "public/assets/images/v1/stock-side-raise-v2.jpeg": {
+    "mtime": 1782985571.4348516,
+    "ast_hash": "0edcbeae00b3542863983820d5a78535",
+    "semantic_hash": "0edcbeae00b3542863983820d5a78535"
+  },
+  "public/assets/images/v1/stock-side-raise.jpeg": {
+    "mtime": 1782985571.4368439,
+    "ast_hash": "c557212e72278a28eff85af21ae6a4a8",
+    "semantic_hash": "c557212e72278a28eff85af21ae6a4a8"
+  },
+  "public/assets/images/v1/stock-spider-curl.jpeg": {
+    "mtime": 1782985571.4378421,
+    "ast_hash": "f664fb6a92fe5f4ce8a8b2086bb8c940",
+    "semantic_hash": "f664fb6a92fe5f4ce8a8b2086bb8c940"
+  },
+  "public/assets/images/v1/stock-split-squat-start.jpeg": {
+    "mtime": 1782985571.4388442,
+    "ast_hash": "e8520a696c05765b0282782f015bc9b0",
+    "semantic_hash": "e8520a696c05765b0282782f015bc9b0"
+  },
+  "public/assets/images/v1/stock-stack-breathing.jpeg": {
+    "mtime": 1782985571.4408457,
+    "ast_hash": "09a7e977016b0d73adcedf4793352517",
+    "semantic_hash": "09a7e977016b0d73adcedf4793352517"
+  },
+  "public/assets/images/v1/stock-supported-row.jpeg": {
+    "mtime": 1782985571.4418488,
+    "ast_hash": "ace84dd6ecc92b66a72e4485efab5b17",
+    "semantic_hash": "ace84dd6ecc92b66a72e4485efab5b17"
+  },
+  "public/assets/images/v1/stock-tibialis-raise.jpeg": {
+    "mtime": 1782985571.442847,
+    "ast_hash": "10be0bc285cd340b2406280c5d3f0c11",
+    "semantic_hash": "10be0bc285cd340b2406280c5d3f0c11"
+  },
+  "public/assets/images/v1/stock-tricep-exercise-v2.jpeg": {
+    "mtime": 1782985571.4438446,
+    "ast_hash": "da43cdd0050b512ecf790ae209973a06",
+    "semantic_hash": "da43cdd0050b512ecf790ae209973a06"
+  },
+  "public/assets/images/v1/stock-tricep-exercise.jpeg": {
+    "mtime": 1782985571.4448485,
+    "ast_hash": "231623c7dc9f1ba4a7770922e64cf203",
+    "semantic_hash": "231623c7dc9f1ba4a7770922e64cf203"
+  },
+  "public/assets/images/v1/stock-upper-back-pulldown.jpeg": {
+    "mtime": 1782985571.4460118,
+    "ast_hash": "b79d8bd021bc58ecdf389067f18e2dc5",
+    "semantic_hash": "b79d8bd021bc58ecdf389067f18e2dc5"
+  },
+  "public/assets/images/v1/stock-water-health.jpeg": {
+    "mtime": 1782985571.4476988,
+    "ast_hash": "96d49fa87045a40c613e59dfc2155150",
+    "semantic_hash": "96d49fa87045a40c613e59dfc2155150"
+  },
+  "public/assets/images/yin_yang_health_1782501750662.jpg": {
+    "mtime": 1782985571.4488442,
+    "ast_hash": "09d93e4601bd9b079ca4eaa2c665f796",
+    "semantic_hash": "09d93e4601bd9b079ca4eaa2c665f796"
+  },
+  "public/assets/kc-jugran.png": {
+    "mtime": 1782928011.5977309,
+    "ast_hash": "b4f2e42ebf601e0ce678e89a35ce2a5d",
+    "semantic_hash": "b4f2e42ebf601e0ce678e89a35ce2a5d"
+  },
+  "public/assets/logo.png": {
+    "mtime": 1782922962.2854147,
+    "ast_hash": "0b251a097fcfebd372ba76b9b8c29692",
+    "semantic_hash": "0b251a097fcfebd372ba76b9b8c29692"
+  },
+  "scripts/generate-docx.ts": {
+    "mtime": 1782974235.485608,
+    "ast_hash": "e59787bf637f807b44022ca7f1873afa",
+    "semantic_hash": "e59787bf637f807b44022ca7f1873afa"
+  },
+  "SPEC.md": {
+    "mtime": 1782990746.6105628,
+    "ast_hash": "43b1339267168e6f449996f16fd77faf",
+    "semantic_hash": "43b1339267168e6f449996f16fd77faf"
+  },
+  "graphify-out/converted/Personal_Training_Foundations_27514424.md": {
+    "mtime": 1783040460.261372,
+    "ast_hash": "2a753a6465ab34e76693f8e51347fd11",
+    "semantic_hash": "2a753a6465ab34e76693f8e51347fd11"
+  },
+  "graphify-out/converted/Personal_Training_Foundations_66153685.md": {
+    "mtime": 1783040464.4609258,
+    "ast_hash": "dc405108e510a9afff54a941bd8c7eeb",
+    "semantic_hash": "dc405108e510a9afff54a941bd8c7eeb"
+  }
+}

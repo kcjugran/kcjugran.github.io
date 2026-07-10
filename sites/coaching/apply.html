@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply for Personal Training — KC Jugran</title>
+<meta name="description" content="Apply for KC Jugran's private online personal training roster. Short questionnaire, no obligation. Limited spots, by application only.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kcjugran.github.io/hire-me/apply.html">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+
+<meta property="og:site_name" content="KC Jugran">
+<meta property="og:title" content="Apply for Personal Training — KC Jugran">
+<meta property="og:description" content="Apply for KC Jugran's private online personal training roster. Short questionnaire, no obligation.">
+<meta property="og:url" content="https://kcjugran.github.io/hire-me/apply.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://kcjugran.github.io/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="KC Jugran — holistic coaching">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Apply for Personal Training — KC Jugran">
+<meta name="twitter:description" content="Apply for KC Jugran's private online personal training roster. Short questionnaire, no obligation.">
+<meta name="twitter:image" content="https://kcjugran.github.io/og-card.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="stylesheet" href="assets/css/application.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="minimal-nav">
+  <div class="nav-inner">
+    <a class="nav-wordmark" href="index.html">KC Jugran</a>
+    <a class="back-link" href="index.html">&larr; Back to site</a>
+  </div>
+</header>
+
+<main id="main" class="apply-main">
+  <div class="apply-header">
+    <p class="eyebrow">Personal Training — Application</p>
+    <h1>Let's see if we're a fit.</h1>
+    <p>This is a small, private roster — application first, no obligation. A thorough application — about 10–15 minutes — tells me about your situation and goals. It's deliberately detailed: it's how I make sure I only take on people I can genuinely help. If it's a fit, we'll get on a strategy call. If there's no open slot right now, qualified applicants join the waitlist.</p>
+    <p>Premium 1:1 holistic coaching — sessions run in Hindi, English, or the mix that's natural to you.</p>
+  </div>
+
+  <!--
+    ============================================================
+    INTEGRATION CONTRACT — PT Application Questionnaire
+    ============================================================
+    Mount point: #pt-application (below)
+
+    The real questionnaire is being built in a separate session and
+    mounts here. Expected behavior (already decided, do not
+    re-litigate — see business-strategy.md "Qualifying process"):
+
+      1. 10–15 minute questionnaire.
+      2. Instant auto-decision on submit — no manual review delay.
+      3. QUALIFIED  -> immediately show Calendly booking embed/link
+                        (no "check your email" step).
+      4. DISQUALIFIED -> immediately show a waitlist confirmation
+                        message; email is logged to a sheet; a
+                        6-month cooldown applies before re-applying.
+
+    This page stays dumb: it only hosts the mount point and matches
+    the form's visual tokens (see assets/css/styles.css :root
+    custom properties — --cream, --sage, --ink, etc., and the
+    .btn / .btn-pill button classes). All qualification logic lives
+    with the form itself, not with this page.
+
+    FULFILLED — assets/js/application.js mounts the live questionnaire
+    into #pt-application below. See FUNNEL-SETUP.md for the config
+    values (Razorpay link, Calendly link, Apps Script URL) KC needs
+    to paste in before this goes live.
+    ============================================================
+  -->
+  <div id="pt-application" class="pt-application-mount"></div>
+</main>
+
+<footer class="site-footer minimal-footer">
+  <div class="footer-inner">
+    <p class="footer-copy">&copy; <span id="footer-year">2026</span> KC Jugran. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/application.js" defer></script>
+</body>
+</html>

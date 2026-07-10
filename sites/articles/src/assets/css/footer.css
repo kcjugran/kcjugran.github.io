@@ -1,0 +1,182 @@
+/* ==========================================================================
+   footer.css — structured site footer (brand, nav, social, copyright).
+   Owned by: footer agent. Only edit selectors below; don't touch other files.
+   Note: the small fixed bottom-right social-bar is a SEPARATE component,
+   owned by social.css — don't touch it here.
+   ========================================================================== */
+
+.coaching-cta-band {
+  padding: 1.5rem 2rem;
+  text-align: center;
+  background: var(--cream, #f9f8f6);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.coaching-cta-band p {
+  margin: 0;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  color: var(--ink);
+}
+
+.coaching-cta-band a {
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-footer {
+  position: relative;
+  padding: 4.5rem 2rem 2.5rem;
+  background: var(--ink);
+  color: var(--sand);
+}
+
+/* Soft light-to-dark seam where the cream page meets the footer,
+   instead of a hard 1px line. */
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(249, 248, 246, 0.14) 50%,
+    transparent
+  );
+}
+
+.footer-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.footer-logo {
+  height: 34px;
+  width: auto;
+  border-radius: 4px;
+}
+
+.footer-brand-name {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.footer-tagline {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.72rem;
+  color: var(--sand-dark);
+  letter-spacing: 0.01em;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+.footer-links a {
+  position: relative;
+  text-decoration: none;
+  color: var(--sand);
+  font-size: 0.85rem;
+  letter-spacing: 0.01em;
+  padding-bottom: 0.2rem;
+  transition: color 160ms var(--ease-out);
+}
+
+.footer-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  height: 1px;
+  background: var(--cream);
+  transition: right 180ms var(--ease-out);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-links a:hover {
+    color: var(--cream);
+  }
+
+  .footer-links a:hover::after {
+    right: 0;
+  }
+}
+
+.footer-social {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  color: var(--sand);
+  background: rgba(249, 248, 246, 0.06);
+  transition: color 160ms var(--ease-out), background-color 160ms var(--ease-out),
+    transform 160ms var(--ease-out);
+}
+
+.footer-social svg {
+  width: 15px;
+  height: 15px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footer-social a:hover {
+    color: var(--ink);
+    background: var(--cream);
+    transform: translateY(-2px);
+  }
+}
+
+.footer-social a:active {
+  transform: translateY(0);
+}
+
+.footer-copyright {
+  max-width: 1240px;
+  margin: 3rem auto 0;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(249, 248, 246, 0.1);
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.01em;
+  color: var(--sand-dark);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-links a,
+  .footer-links a::after,
+  .footer-social a {
+    transition: none !important;
+  }
+}

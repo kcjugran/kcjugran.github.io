@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="ph-title ph-desc">
+  <title id="ph-title">KC Jugran — Holistic Coaching</title>
+  <desc id="ph-desc">Branded placeholder tile standing in for a real photo of KC Jugran. Swap the &lt;img&gt; src for an actual headshot or training photo when one is ready — this tile is intentionally designed to hold that slot until then.</desc>
+  <!-- INTENTIONAL BRAND PLACEHOLDER — swap for a real headshot/training photo later.
+       Kept at the same 400x500 (4:5 portrait) viewBox so layout is unaffected. -->
+  <defs>
+    <linearGradient id="ph-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2E3A30"/>
+      <stop offset="100%" stop-color="#3A4A3E"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" rx="24" fill="url(#ph-bg)"/>
+  <rect x="1" y="1" width="398" height="498" rx="23" fill="none" stroke="#4A5D4E" stroke-width="2"/>
+  <text x="200" y="235" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="88" font-weight="700" fill="#F9F8F6">KC</text>
+  <line x1="160" y1="270" x2="240" y2="270" stroke="#E5E1DA" stroke-width="1"/>
+  <text x="200" y="300" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="600" letter-spacing="0.16em" fill="#E5E1DA">KC JUGRAN &#183; HOLISTIC COACHING</text>
+</svg>

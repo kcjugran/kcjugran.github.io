@@ -1,0 +1,132 @@
+/* ==========================================================================
+   featured.css — the single large "latest video" spotlight card on the
+   homepage, above the regular grid.
+   Owned by: featured agent. Only edit selectors below; don't touch other files.
+   ========================================================================== */
+
+.featured-label {
+  display: flex;
+  align-items: center;
+  gap: 0.65em;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 1.1rem;
+}
+
+.featured-label::after {
+  content: "";
+  display: block;
+  height: 1px;
+  flex: 1 1 auto;
+  background: var(--sand);
+}
+
+.featured-card {
+  display: flex;
+  align-items: stretch;
+  gap: 2.5rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 1.75rem;
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.05);
+  transition: transform 260ms var(--ease-out), box-shadow 260ms var(--ease-out),
+    border-color 260ms var(--ease-out);
+}
+
+.featured-thumb {
+  position: relative;
+  flex: 1 1 55%;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px;
+  background: var(--sand);
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.08);
+}
+
+.featured-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms var(--ease-out);
+}
+
+.featured-body {
+  flex: 1 1 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+.featured-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0.6rem 0 1rem;
+}
+
+.featured-excerpt {
+  color: var(--sand-dark);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.featured-body::after {
+  content: "Watch now";
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-top: 1.4rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--sage);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .featured-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--sand-dark);
+    box-shadow: 0 20px 40px -20px rgba(26, 26, 26, 0.22);
+  }
+
+  .featured-card:hover .featured-thumb img {
+    transform: scale(1.045);
+  }
+}
+
+.featured-card:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+@media (max-width: 800px) {
+  .featured-card {
+    flex-direction: column;
+    padding: 1.1rem;
+    gap: 1.5rem;
+  }
+
+  .featured-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .featured-card,
+  .featured-thumb img {
+    transition: none !important;
+    transform: none !important;
+  }
+}

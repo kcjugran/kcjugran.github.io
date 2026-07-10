@@ -1,0 +1,277 @@
+/* ==========================================================================
+   hero.css — homepage hero (asymmetric copy + mark), stat bar, about band,
+   section intros (used on home + /videos/), see-all link.
+   Owned by: hero agent. Only edit selectors below; don't touch other files.
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  padding: 2.5rem 0 3.5rem;
+  isolation: isolate;
+}
+
+/* Faint radial warmth behind the copy — a studio backdrop, not a gradient
+   flourish. Kept within the palette (cream/sand only) and very low opacity
+   so it reads as texture, not decoration. */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -10% -2rem -6%;
+  z-index: -1;
+  background:
+    radial-gradient(60% 70% at 20% 30%, var(--cream-alt) 0%, transparent 70%),
+    radial-gradient(45% 55% at 85% 75%, var(--sand) 0%, transparent 75%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hero-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  font-size: clamp(2.25rem, 5vw + 1rem, 4.5rem);
+  margin-bottom: 1rem;
+}
+
+.hero-copy p {
+  color: var(--sand-dark);
+  font-size: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem);
+  line-height: 1.6;
+  max-width: 52ch;
+  margin: 0 0 1.75rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.hero-cta {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 160ms ease, border-color 160ms ease,
+    background-color 160ms ease, transform 160ms var(--ease-out),
+    box-shadow 200ms var(--ease-out);
+}
+
+.hero-cta--primary {
+  color: var(--cream);
+  background: var(--sage);
+  padding: 0.85rem 1.75rem;
+  border-radius: 100px;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.08);
+}
+
+.hero-cta--ghost {
+  color: var(--sage);
+  border-bottom: 1px solid var(--sand-dark);
+  padding-bottom: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hero-cta--primary:hover {
+    background: var(--sage-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(26, 26, 26, 0.14);
+  }
+
+  .hero-cta--ghost:hover {
+    color: var(--sage-light);
+    border-color: var(--sage-light);
+  }
+}
+
+.hero-cta--primary:active {
+  transform: scale(0.97);
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.08);
+}
+
+.hero-cta--ghost:active {
+  transform: scale(0.97);
+}
+
+.hero-mark {
+  flex-shrink: 0;
+  width: 160px;
+  height: 160px;
+  display: none;
+}
+
+.hero-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 20px rgba(26, 26, 26, 0.08));
+}
+
+@media (min-width: 900px) {
+  .hero-mark {
+    display: block;
+  }
+}
+
+/* Stat bar */
+
+.stat-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  padding: 1.75rem 0;
+  margin-bottom: 2rem;
+  border-top: 1px solid var(--sand);
+  border-bottom: 1px solid var(--sand);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.5vw + 1.75rem, 2.75rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--sand-dark);
+}
+
+/* About band */
+
+.about-band {
+  position: relative;
+  padding: 2.75rem 0 3.5rem;
+}
+
+.about-band::before {
+  content: "";
+  position: absolute;
+  inset: 0 -6%;
+  z-index: -1;
+  background: var(--cream-alt);
+  border-radius: 24px;
+}
+
+.about-copy {
+  max-width: 70ch;
+}
+
+.about-copy p {
+  color: var(--charcoal);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.about-links a {
+  text-decoration: none;
+  color: var(--sage);
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .about-links a:hover {
+    color: var(--sage-light);
+    border-color: var(--sage-light);
+  }
+}
+
+.section-intro {
+  text-align: center;
+  padding: 0.5rem 0 2rem;
+}
+
+.section-intro--tight {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+}
+
+.section-intro h1 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-size: clamp(2rem, 4vw + 1rem, 4.25rem);
+  margin-bottom: 0.75rem;
+}
+
+.section-intro h2 {
+  font-size: 1.4rem;
+  margin: 0;
+}
+
+.section-intro p {
+  color: var(--sand-dark);
+  font-size: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .section-intro p {
+    max-width: 60ch;
+  }
+}
+
+.see-all {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+.see-all a {
+  text-decoration: none;
+  color: var(--sage);
+  font-weight: 600;
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .see-all a:hover {
+    color: var(--sage-light);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-cta {
+    transition: color 160ms ease, border-color 160ms ease,
+      background-color 160ms ease !important;
+  }
+
+  .hero-cta--primary:hover,
+  .hero-cta--primary:active,
+  .hero-cta--ghost:active {
+    transform: none !important;
+  }
+}

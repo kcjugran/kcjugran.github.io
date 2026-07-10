@@ -1,0 +1,71 @@
+name: Deploy mega-site to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Course (React/Vite) is a separate toolchain from build.mjs itself, so
+      # it's built as its own step here. build.mjs then just copies
+      # sites/course/dist/ into dist/course/ (it also builds it itself if
+      # missing, but doing it explicitly here keeps the CI step visible/
+      # cacheable and matches the local workflow).
+      - name: Install course dependencies
+        run: npm ci --prefix sites/course
+
+      - name: Build course (base /course/)
+        run: npm run build:megasite --prefix sites/course
+        env:
+          MEGASITE: "1"
+
+      # Articles (11ty, Living Foundations). pathPrefix "/articles/" is set in
+      # sites/articles/eleventy.config.js, so the plain eleventy build already
+      # bakes the correct prefixed links. build.mjs then copies
+      # sites/articles/_site/ into dist/articles/.
+      - name: Install articles dependencies
+        run: npm ci
+        working-directory: sites/articles
+
+      - name: Build articles (11ty)
+        run: npx @11ty/eleventy
+        working-directory: sites/articles
+
+      - name: Assemble dist/
+        run: node build.mjs
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

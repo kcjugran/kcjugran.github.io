@@ -1,0 +1,102 @@
+/* ==========================================================================
+   nav.css — the umbrella strip: a slim DARK master bar injected at the top of
+   <body> on every page across the mega-site. Dark on purpose — every section's
+   own header is light/cream (or the articles' near-black masthead), so a deep
+   sage global bar reads as a distinct layer above them, never a duplicate of
+   the section's own nav. Deliberately isolated (own class prefix, no globals
+   touched) so it never collides with an underlying page's CSS.
+   ========================================================================== */
+
+.umbrella-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #2E3A30;                 /* deep sage — the one global bar */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.umbrella-nav .umbrella-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.umbrella-nav .umbrella-wordmark {
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #F4F1E9;
+  text-decoration: none;
+  flex-shrink: 0;
+  letter-spacing: 0.01em;
+  margin-right: auto;                  /* pushes links + CTA to the right */
+}
+
+.umbrella-nav .umbrella-links {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.umbrella-nav .umbrella-links a {
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: rgba(244, 241, 233, 0.72);    /* muted cream */
+  transition: color 160ms ease;
+  white-space: nowrap;
+}
+
+.umbrella-nav .umbrella-links a[aria-current="page"] {
+  color: #F4F1E9;
+  font-weight: 600;
+}
+
+.umbrella-nav .umbrella-cta {
+  flex-shrink: 0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #22201C;
+  background: #F4F1E9;
+  padding: 0.42rem 1.05rem;
+  border-radius: 100px;
+  white-space: nowrap;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .umbrella-nav .umbrella-links a:hover {
+    color: #F4F1E9;
+  }
+  .umbrella-nav .umbrella-cta:hover {
+    background: #ffffff;
+    transform: translateY(-1px);
+  }
+}
+
+@media (max-width: 640px) {
+  .umbrella-nav .umbrella-inner {
+    padding: 0.45rem 1rem;
+    gap: 0.75rem;
+  }
+  .umbrella-nav .umbrella-links {
+    gap: 0.85rem;
+  }
+  .umbrella-nav .umbrella-links a {
+    font-size: 0.76rem;
+  }
+  /* On the smallest screens, drop the CTA text label to keep one clean line;
+     the Coaching section link still carries the same destination. */
+  .umbrella-nav .umbrella-cta {
+    display: none;
+  }
+}

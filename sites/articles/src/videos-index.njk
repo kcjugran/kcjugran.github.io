@@ -1,0 +1,84 @@
+---
+layout: base.njk
+title: Video Articles
+permalink: /videos/
+bodyWidth: wide
+---
+{% set categories = ["Breathing & Recovery", "Fitness & Movement", "Injury & Pain Relief", "Mindset & Psychology", "Nutrition", "Sleep", "Wellness & Lifestyle"] %}
+
+<section class="section-intro">
+  <h1>Video Articles</h1>
+</section>
+
+<div class="search-box">
+  <input
+    type="search"
+    id="video-search"
+    placeholder="Search video articles…"
+    aria-label="Search video articles"
+    autocomplete="off">
+  <span class="search-count" id="video-search-count"></span>
+</div>
+
+<div class="category-chips" role="group" aria-label="Filter by topic">
+  <button type="button" class="chip is-active" data-category="all">All</button>
+  {% for cat in categories %}
+  <button type="button" class="chip" data-category="{{ cat }}">{{ cat }}</button>
+  {% endfor %}
+</div>
+
+<ul class="video-grid" id="video-grid">
+  {% for video in collections.videos %}
+  <li class="video-card" data-category="{{ video.data.category }}" data-search="{{ video.data.title | lower }} {{ video.templateContent | excerpt(400) | lower }}" style="--stagger: {{ loop.index0 }}">
+    <a href="{{ video.url | url }}">
+      <span class="video-card-thumb">
+        <img src="https://i.ytimg.com/vi/{{ video.data.youtubeId }}/hqdefault.jpg" alt="{{ video.data.title }} — video thumbnail" loading="lazy">
+        <span class="video-card-play" aria-hidden="true"></span>
+      </span>
+      <span class="video-card-body">
+        <span class="video-card-tag">{{ video.data.category }}</span>
+        <span class="video-card-title">{{ video.data.title }}</span>
+        <span class="video-card-excerpt">{{ video.templateContent | excerpt | safe }}</span>
+      </span>
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+
+<p class="search-empty" id="video-search-empty" hidden>No video articles match that search.</p>
+
+<script>
+(function () {
+  var input = document.getElementById("video-search");
+  var chips = Array.prototype.slice.call(document.querySelectorAll(".chip"));
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#video-grid .video-card"));
+  var countEl = document.getElementById("video-search-count");
+  var emptyEl = document.getElementById("video-search-empty");
+  var activeCategory = "all";
+
+  function render() {
+    var q = input.value.trim().toLowerCase();
+    var visible = 0;
+    cards.forEach(function (card) {
+      var matchesText = !q || card.dataset.search.indexOf(q) !== -1;
+      var matchesCategory = activeCategory === "all" || card.dataset.category === activeCategory;
+      var match = matchesText && matchesCategory;
+      card.hidden = !match;
+      if (match) visible++;
+    });
+    countEl.textContent = (q || activeCategory !== "all") ? (visible + " of " + cards.length) : "";
+    emptyEl.hidden = visible !== 0;
+  }
+
+  input.addEventListener("input", render);
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.classList.remove("is-active"); });
+      chip.classList.add("is-active");
+      activeCategory = chip.dataset.category;
+      render();
+    });
+  });
+  render();
+})();
+</script>

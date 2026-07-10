@@ -1,0 +1,271 @@
+/* ==========================================================================
+   brand-hub styles.css — tokens lifted verbatim from sites/coaching's
+   assets/css/styles.css (:root block, buttons, cards) so the hub reads as
+   the same brand, not a new one.
+   ========================================================================== */
+
+:root {
+  --cream: #F9F8F6;
+  --cream-alt: #F2EFE9;
+  --sand: #E5E1DA;
+  --sand-dark: #8C8578;
+  --sage: #3A4A3E;
+  --sage-light: #4A5D4E;
+  --clay: #B5613A;
+  --charcoal: #2C2C2C;
+  --ink: #1A1A1A;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+
+  --shadow-card: 0 1px 2px rgba(26, 26, 26, 0.05), 0 6px 16px -12px rgba(26, 26, 26, 0.18);
+  --shadow-card-hover: 0 14px 28px -14px rgba(26, 26, 26, 0.3), 0 2px 5px -1px rgba(26, 26, 26, 0.1);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+}
+
+p { margin: 0 0 1rem; }
+a { color: inherit; }
+
+:focus-visible {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  top: -3rem;
+  left: 1rem;
+  background: var(--ink);
+  color: var(--cream);
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  z-index: 1000;
+  text-decoration: none;
+  transition: top 160ms var(--ease-out);
+}
+.skip-link:focus { top: 1rem; }
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 0.6rem;
+}
+
+/* Hero */
+.hub-hero {
+  position: relative;
+  isolation: isolate;
+  padding: 5rem 0 3.5rem;
+  text-align: center;
+}
+
+.hub-hero::before {
+  content: "";
+  position: absolute;
+  inset: -2rem -10% -2rem -6%;
+  z-index: -1;
+  background:
+    radial-gradient(60% 70% at 20% 30%, var(--cream-alt) 0%, transparent 70%),
+    radial-gradient(45% 55% at 85% 75%, var(--sand) 0%, transparent 75%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.hub-hero .eyebrow { display: block; }
+
+.hub-hero h1 {
+  font-size: clamp(2.25rem, 4.5vw + 1rem, 3.75rem);
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+}
+
+.hub-hero p {
+  color: var(--sand-dark);
+  font-size: clamp(1.05rem, 0.6vw + 0.9rem, 1.25rem);
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+.hub-trust-row {
+  font-size: 0.8rem !important;
+  letter-spacing: 0.03em;
+  color: var(--sand-dark);
+  margin: 1.1rem auto 0 !important;
+  max-width: none !important;
+}
+
+/* Route cards */
+.route-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  padding-bottom: 4.5rem;
+}
+
+@media (min-width: 640px) {
+  .route-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 960px) {
+  .route-grid {
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  }
+}
+
+.route-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: card-in 480ms var(--ease-out) forwards;
+  animation-delay: calc(var(--stagger, 0) * 60ms);
+  transition: box-shadow 260ms var(--ease-out), transform 260ms var(--ease-out);
+}
+
+@keyframes card-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .route-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+  .route-card:hover h2 { color: var(--sage); }
+}
+
+.route-card.route-primary {
+  background: var(--sage);
+  border-color: var(--sage);
+}
+
+.route-card.route-primary .video-card-tag {
+  color: var(--cream);
+  background: rgba(249, 248, 246, 0.12);
+  border-color: rgba(249, 248, 246, 0.25);
+}
+
+.route-card.route-primary h2,
+.route-card.route-primary p { color: var(--cream); }
+
+.route-card.route-primary .route-cta { color: var(--cream); }
+
+.video-card-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sage);
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 100px;
+  padding: 0.2rem 0.65rem;
+  margin-bottom: 0.9rem;
+}
+
+.route-card h2 {
+  font-size: 1.4rem;
+  transition: color 200ms ease;
+}
+
+.route-card p {
+  color: var(--sand-dark);
+  font-size: 0.95rem;
+  flex: 1;
+  margin-bottom: 1.25rem;
+}
+
+.route-cta {
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--sage);
+}
+
+.route-cta::after {
+  content: " \2192";
+}
+
+/* Footer */
+.hub-footer {
+  border-top: 1px solid var(--sand);
+  margin-top: 1rem;
+}
+
+.hub-footer .footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.hub-footer .footer-social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.hub-footer a {
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--charcoal);
+  transition: color 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .hub-footer a:hover { color: var(--sage); }
+}
+
+.hub-footer .footer-copy {
+  font-size: 0.82rem;
+  color: var(--sand-dark);
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-card {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
