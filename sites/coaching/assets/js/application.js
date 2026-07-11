@@ -175,6 +175,19 @@
 
     var fields = el("div", { class: "pt-app__fields" });
 
+    // Honeypot: hidden from humans, tabindex/aria removed from a11y tree.
+    // Bots that auto-fill every field will populate this; the server drops
+    // any submission where it's non-empty.
+    var honeypot = el("div", {
+      class: "pt-app__hp",
+      "aria-hidden": "true",
+      style: "position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"
+    }, [
+      el("label", { for: "f-company", text: "Company" }),
+      el("input", { type: "text", id: "f-company", name: "company", tabindex: "-1", autocomplete: "off", value: "" })
+    ]);
+    fields.appendChild(honeypot);
+
     // Section 1 — details
     fields.appendChild(sectionHeading("Your details"));
 
@@ -323,7 +336,8 @@
       timing: getRadioValue(form, "timing"),
       source: getRadioValue(form, "source"),
       source_other: (form.querySelector('[name="source_other"]').value || "").trim(),
-      start_when: getRadioValue(form, "start_when")
+      start_when: getRadioValue(form, "start_when"),
+      company: (function () { var h = form.querySelector('[name="company"]'); return h ? h.value : ""; })()
     };
   }
 
@@ -375,6 +389,7 @@
       source: data.source,
       source_other: data.source_other,
       start_when: data.start_when,
+      company: data.company, // honeypot (server drops if non-empty)
       submitted_at: new Date().toISOString()
     };
 
