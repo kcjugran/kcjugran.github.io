@@ -22,7 +22,7 @@
   var CONFIG = {
     // Google Apps Script web app URL (doPost). Leave empty to skip
     // network logging entirely — the form works standalone without it.
-    APPS_SCRIPT_URL: "",
+    APPS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbysqDzsWCt1im0AbehIVTgnNNZLQundzNGEiMlAHN-cC9RUybsjeoOnex3nhvWg8xrH/exec",
     STORAGE_KEY: "kc-interest-form-v1"
   };
 
