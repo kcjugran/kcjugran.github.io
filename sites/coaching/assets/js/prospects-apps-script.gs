@@ -15,7 +15,10 @@
 
 var SHEET_NAME = "Client Prospects";
 var NOTIFY_EMAIL = "KCJugran@gmail.com";
-var ACCESS_TOKEN = "kcp_7f3a9d2e1b8c4f60a5d9"; // gates doGet reads. Keep private (dashboard-only).
+// gates doGet reads. THIS FILE IS PUBLIC (in the repo + served) — do NOT put the real
+// token here. The real token lives ONLY in the deployed Apps Script and the local coach
+// dashboard. This placeholder is a template value; set the real one inside the Apps Script editor.
+var ACCESS_TOKEN = "SET_A_SECRET_TOKEN_IN_THE_DEPLOYED_SCRIPT";
 
 var HEADERS = [
   "Submitted At", "Name", "Email", "Age", "Gender", "Requirements",
