@@ -143,6 +143,7 @@ console.log("[build] brand hub -> /");
   const hubDir = path.join(ROOT, "src", "brand-hub");
   let html = readText(path.join(hubDir, "index.html"));
   html = injectNav(html, null); // no single "current" section on the hub
+  html = html.replace(/<\/head>/i, '  <meta name="referrer" content="strict-origin-when-cross-origin">\n</head>');
   html = replaceAll(html, 'href="/styles.css"', `href="/styles.css?v=${BUILD_V}"`);
   writeHtml(path.join(DIST, "index.html"), html);
   copyFile(path.join(hubDir, "styles.css"), path.join(DIST, "styles.css"));
@@ -176,6 +177,10 @@ console.log("[build] coaching -> /coaching/, /apply/, /seminars/, /coaching-asse
   // canonicalUrl is this page's real served URL under the mega-site.
   function transformCoachingHtml(html, canonicalUrl, srcFile) {
     let out = html;
+    // Referrer-Policy (the one useful security header settable via <meta> on
+    // GitHub Pages; X-Frame-Options / nosniff / frame-ancestors are HTTP-header
+    // only and can't be set on Pages without a CDN in front).
+    out = out.replace(/<\/head>/i, '  <meta name="referrer" content="strict-origin-when-cross-origin">\n</head>');
     // No umbrella nav anymore — coaching's own cream site-nav header
     // (index.html) and the apply/seminar wordmark stay intact as-is.
     // assets/css/..., assets/js/..., assets/img/... -> /coaching-assets/...
