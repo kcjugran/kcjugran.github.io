@@ -174,6 +174,22 @@
    Questions
    ----------------------------------------------------------------------- */
 
+.pt-app__section-heading {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--sage);
+  margin: 2rem 0 0.25rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--sand);
+}
+
+.pt-app__fields > .pt-app__section-heading:first-child {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: none;
+}
+
 .pt-app__question {
   padding-bottom: 1.75rem;
   border-bottom: 1px solid var(--sand);

@@ -42,40 +42,21 @@
 
 <main id="main" class="apply-main">
   <div class="apply-header">
-    <p class="eyebrow">Personal Training — Application</p>
-    <h1>Let's see if we're a fit.</h1>
-    <p>This is a small, private roster — application first, no obligation. A thorough application — about 10–15 minutes — tells me about your situation and goals. It's deliberately detailed: it's how I make sure I only take on people I can genuinely help. If it's a fit, we'll get on a strategy call. If there's no open slot right now, qualified applicants join the waitlist.</p>
-    <p>Premium 1:1 holistic coaching — sessions run in Hindi, English, or the mix that's natural to you.</p>
+    <p class="eyebrow">Personal Training — Register Interest</p>
+    <h1>Tell me what you're after.</h1>
+    <p>A few quick questions so I understand your goals and how you'd like to train. When a spot opens that fits what you're looking for, I'll reach out. Sessions run in Hindi, English, or the mix that's natural to you.</p>
   </div>
 
   <!--
     ============================================================
-    INTEGRATION CONTRACT — PT Application Questionnaire
-    ============================================================
     Mount point: #pt-application (below)
 
-    The real questionnaire is being built in a separate session and
-    mounts here. Expected behavior (already decided, do not
-    re-litigate — see business-strategy.md "Qualifying process"):
-
-      1. 10–15 minute questionnaire.
-      2. Instant auto-decision on submit — no manual review delay.
-      3. QUALIFIED  -> immediately show Calendly booking embed/link
-                        (no "check your email" step).
-      4. DISQUALIFIED -> immediately show a waitlist confirmation
-                        message; email is logged to a sheet; a
-                        6-month cooldown applies before re-applying.
-
-    This page stays dumb: it only hosts the mount point and matches
-    the form's visual tokens (see assets/css/styles.css :root
-    custom properties — --cream, --sage, --ink, etc., and the
-    .btn / .btn-pill button classes). All qualification logic lives
-    with the form itself, not with this page.
-
-    FULFILLED — assets/js/application.js mounts the live questionnaire
-    into #pt-application below. See FUNNEL-SETUP.md for the config
-    values (Razorpay link, Calendly link, Apps Script URL) KC needs
-    to paste in before this goes live.
+    Simple single-page interest form — no scoring, no qualify/
+    disqualify, no deposit, no Calendly. assets/js/application.js
+    renders the form and, on submit, POSTs to CONFIG.APPS_SCRIPT_URL
+    then shows a thank-you screen. See FUNNEL-SETUP.md for the
+    Apps Script deploy steps. The old qualification funnel is
+    shelved (preserved in git history) and may return later.
     ============================================================
   -->
   <div id="pt-application" class="pt-application-mount"></div>
