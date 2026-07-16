@@ -268,6 +268,7 @@ console.log("[build] coaching -> /coaching/, /apply/, /seminars/, /coaching-asse
     { src: "index.html", dest: "coaching/index.html", section: "coaching", canonicalUrl: "https://kcjugran.github.io/coaching/" },
     { src: "apply.html", dest: "apply/index.html", section: "coaching", canonicalUrl: "https://kcjugran.github.io/apply/" },
     { src: "seminar.html", dest: "seminars/index.html", section: "coaching", canonicalUrl: "https://kcjugran.github.io/seminars/" },
+    { src: "privacy.html", dest: "coaching/privacy/index.html", section: "coaching", canonicalUrl: "https://kcjugran.github.io/coaching/privacy/" },
   ];
 
   for (const p of pages) {
