@@ -41,8 +41,12 @@
     { value: "30000", label: "₹30,000+" },
     { value: "40000", label: "₹40,000+" },
     { value: "50000", label: "₹50,000+" },
-    { value: "whatever-it-takes", label: "Whatever it takes to get results" }
+    { value: "whatever-it-takes", label: "Whatever it takes to get results" },
+    { value: "under-30000", label: "None of these" }
   ];
+  // Budgets below the floor — selecting one routes to a polite decline
+  // instead of the standard thank-you (the submission is still recorded).
+  var BUDGET_BELOW_FLOOR = ["under-30000"];
   var TIMING_OPTIONS = [
     { value: "early-morning", label: "Early morning (6–8 AM)" },
     { value: "early-afternoon", label: "Early afternoon (11 AM–2 PM)" },
@@ -357,7 +361,11 @@
     }
 
     clearState();
-    renderThankYou();
+    if (BUDGET_BELOW_FLOOR.indexOf(data.budget) !== -1) {
+      renderDecline();
+    } else {
+      renderThankYou();
+    }
   }
 
   // ------------------------------------------------------------------
@@ -371,6 +379,23 @@
     stepWrap.appendChild(el("p", {
       class: "pt-app__body",
       text: "We'll get back to you when classes open up that fit your preferences. Thank you for your time — I hope to start working with you soon."
+    }));
+    stepWrap.appendChild(el("div", { class: "pt-app__decline-wrap" }, [
+      el("a", { class: "pt-app__quiet-link", href: "/", text: "Back to homepage" })
+    ]));
+    card.appendChild(stepWrap);
+    mount.appendChild(card);
+  }
+
+  // Polite decline for below-floor budgets.
+  function renderDecline() {
+    mount.innerHTML = "";
+    var card = el("div", { class: "pt-app" });
+    var stepWrap = el("div", { class: "pt-app__step pt-app__step--outcome" });
+    stepWrap.appendChild(el("h2", { text: "Thank you for your interest." }));
+    stepWrap.appendChild(el("p", {
+      class: "pt-app__body",
+      text: "Based on your answers, this doesn't look like the right fit right now — but I've noted your details and will reach out if something opens up that suits you. Thank you for your time."
     }));
     stepWrap.appendChild(el("div", { class: "pt-app__decline-wrap" }, [
       el("a", { class: "pt-app__quiet-link", href: "/", text: "Back to homepage" })
