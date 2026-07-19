@@ -91,6 +91,25 @@
     try { window.localStorage.removeItem(CONFIG.STORAGE_KEY); } catch (err) {}
   }
 
+  // Declined emails are remembered so a rejected person is sent straight to
+  // the decline message if they re-enter the same email. (localStorage —
+  // same-browser only; a fresh browser re-takes the form and is re-declined
+  // at the budget step anyway.)
+  var REJECTED_KEY = "kc-interest-declined-v1";
+  function loadRejected() {
+    try { var r = JSON.parse(window.localStorage.getItem(REJECTED_KEY) || "[]"); return Array.isArray(r) ? r : []; }
+    catch (e) { return []; }
+  }
+  function rememberRejected(email) {
+    var e = (email || "").toLowerCase().trim();
+    if (!e) return;
+    var list = loadRejected();
+    if (list.indexOf(e) === -1) { list.push(e); try { window.localStorage.setItem(REJECTED_KEY, JSON.stringify(list)); } catch (err) {} }
+  }
+  function isRejected(email) {
+    return loadRejected().indexOf((email || "").toLowerCase().trim()) !== -1;
+  }
+
   var answers = loadState();
   var currentStep = 0;
 
@@ -167,7 +186,10 @@
           el("input", { type: "text", id: "f-company", name: "company", tabindex: "-1", autocomplete: "off", value: "" })
         ]));
         box.appendChild(field("Full name", el("input", { type: "text", name: "name", autocomplete: "name", value: answers.name || "" })));
-        box.appendChild(field("Email", el("input", { type: "email", name: "email", autocomplete: "email", value: answers.email || "" })));
+        var emailInput = el("input", { type: "email", name: "email", autocomplete: "email", value: answers.email || "" });
+        // Already-declined email → send straight to the decline message.
+        emailInput.addEventListener("blur", function () { if (isRejected(this.value)) renderDecline(); });
+        box.appendChild(field("Email", emailInput));
         box.appendChild(field("Age", el("input", { type: "number", name: "age", min: "13", max: "100", value: answers.age || "" })));
         box.appendChild(el("div", { class: "pt-app__question" }, [
           el("p", { class: "pt-app__q-label", text: "Gender" }),
@@ -316,6 +338,8 @@
       evt.preventDefault();
       var vals = step.collect(form);
       mergeInto(vals);
+      // Previously-declined email → straight to the decline message.
+      if (step.key === "details" && isRejected(vals.email)) { renderDecline(); return; }
       var errs = step.validate(vals);
       if (errs.length) {
         renderErrors(errorBox, errs);
@@ -362,6 +386,7 @@
 
     clearState();
     if (BUDGET_BELOW_FLOOR.indexOf(data.budget) !== -1) {
+      rememberRejected(data.email);
       renderDecline();
     } else {
       renderThankYou();
@@ -395,7 +420,7 @@
     stepWrap.appendChild(el("h2", { text: "Thank you for your interest." }));
     stepWrap.appendChild(el("p", {
       class: "pt-app__body",
-      text: "Based on your answers, this doesn't look like the right fit right now — but I've noted your details and will reach out if something opens up that suits you. Thank you for your time."
+      text: "We'll let you know when slots open up. Thank you for your time."
     }));
     stepWrap.appendChild(el("div", { class: "pt-app__decline-wrap" }, [
       el("a", { class: "pt-app__quiet-link", href: "/", text: "Back to homepage" })
