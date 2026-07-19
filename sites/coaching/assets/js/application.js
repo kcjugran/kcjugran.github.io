@@ -42,7 +42,7 @@
     { value: "40000", label: "₹40,000+" },
     { value: "50000", label: "₹50,000+" },
     { value: "whatever-it-takes", label: "Whatever it takes to get results" },
-    { value: "under-30000", label: "None of these" }
+    { value: "under-30000", label: "Less than ₹30,000" }
   ];
   // Budgets below the floor — selecting one routes to a polite decline
   // instead of the standard thank-you (the submission is still recorded).
