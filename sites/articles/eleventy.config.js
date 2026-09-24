@@ -11,6 +11,7 @@ const CSS_FILES = [
   "cards.css",
   "search.css",
   "article.css",
+  "prayer.css",
   "social.css",
   "footer.css",
 ];

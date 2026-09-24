@@ -1,0 +1,164 @@
+---
+layout: base.njk
+title: Free Saturday Ho'oponopono Prayer
+description: A free guided Ho'oponopono prayer session, every Saturday on Zoom. Leave your email and the link appears straight away.
+---
+{# Copy written from Karan's own description of the session (2026-09-24): 45-60 minutes, concept first,
+   then breathing, then affirmations, then the prayer, ending with one person's real problem worked
+   through live. Change any wording you like — the class time itself is set in the console, not here. #}
+
+<section class="section-intro section-intro--tight">
+  <span class="video-card-tag">Free · Every Saturday · 45–60 min</span>
+  <h1>Ho'oponopono, together.</h1>
+  <p>A live session for clearing the hurt you are still carrying — one memory, one person, one regret at a time.</p>
+</section>
+
+<div class="prayer-wrap">
+  <div class="prayer-card">
+    <div class="prayer-body" id="prayer-body">
+      <h2>Come this Saturday</h2>
+      <p class="prayer-lede">
+        Ho'oponopono is an old Hawaiian practice for healing your own pain rather than waiting for anyone
+        else to fix it. Four lines — <em>I'm sorry. Please forgive me. Thank you. I love you.</em> — worked
+        through properly, one hurt at a time. I teach it, then we do it together. Bring a quiet room,
+        headphones, and a pen and notebook — you will be writing during the session. Nothing to buy.
+      </p>
+
+      <form id="prayer-form" novalidate>
+        <label class="prayer-field">
+          <span>First name <small>optional</small></span>
+          <input type="text" name="name" autocomplete="given-name" maxlength="80" placeholder="What should I call you?">
+        </label>
+        <label class="prayer-field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" maxlength="254" required
+                 inputmode="email" placeholder="you@example.com">
+        </label>
+
+        {# Honeypot: hidden from people, filled in by form-stuffing bots. #}
+        <div class="prayer-hp" aria-hidden="true">
+          <label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label>
+        </div>
+
+        <button type="submit" class="hero-cta hero-cta--primary prayer-submit" id="prayer-submit">
+          Get the Zoom link
+        </button>
+        <p class="prayer-small">
+          Your email is used to send you the class and occasional notes about what I'm running next.
+          No one else gets it, and you can ask me to remove you any time.
+        </p>
+      </form>
+
+      <p class="prayer-error" id="prayer-error" role="alert" hidden></p>
+    </div>
+
+    <div class="prayer-done" id="prayer-done" hidden>
+      <h2>You're in.</h2>
+      <p class="prayer-when" id="prayer-when"></p>
+      <a class="hero-cta hero-cta--primary prayer-link" id="prayer-link" href="#" target="_blank" rel="noopener">
+        Open the Zoom room
+      </a>
+      <div class="prayer-details" id="prayer-details" hidden>
+        <p class="prayer-note" id="prayer-note"></p>
+      </div>
+      <p class="prayer-small">
+        Save this page or the link — it's the same room every Saturday. If Zoom asks for the passcode,
+        it's above.
+      </p>
+    </div>
+  </div>
+
+  <aside class="takeaways-card prayer-aside">
+    <h3>How the session runs</h3>
+    <ul>
+      <li><strong>The idea, explained properly</strong> — what Ho'oponopono actually is, and why taking full
+        responsibility for your own pain is what makes it work.</li>
+      <li><strong>Breath work</strong> — a few minutes to settle the body before anything else.</li>
+      <li><strong>Affirmation work</strong> — saying the thing you need to hear, in your own voice.</li>
+      <li><strong>The prayer itself</strong> — the four lines, done together, on something real of your own.</li>
+      <li><strong>One person, worked through live</strong> — someone brings a problem they're carrying and I
+        take them through it end to end, so you see how it is actually done. It might be you, if you want it
+        to be.</li>
+    </ul>
+  </aside>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  // This page posts to one edge function, which holds the real keys, records the
+  // lead and hands back the Zoom link.
+  //
+  // The publishable key below is meant to be public — it ships in the source of
+  // every Supabase site — and Supabase's gateway wants it on every function call.
+  // It grants nothing here: row-level security denies it any read or write on the
+  // prayer tables (checked 2026-09-24: select returns [], insert returns 401).
+  // What actually guards this endpoint lives in the function: an origin allowlist,
+  // a honeypot, a per-IP daily cap, and no way to read anything back out.
+  var ENDPOINT = "https://rvkgmugkhkmtbrwetphm.supabase.co/functions/v1/prayer-signup";
+  var PUBLISHABLE_KEY = "sb_publishable_xJ3biA9WC8RPrCJYc8RFjw_Dql24oPi";
+
+  var form = document.getElementById("prayer-form");
+  var button = document.getElementById("prayer-submit");
+  var errorBox = document.getElementById("prayer-error");
+
+  function fail(message) {
+    errorBox.textContent = message;
+    errorBox.hidden = false;
+    button.disabled = false;
+    button.textContent = "Get the Zoom link";
+  }
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    errorBox.hidden = true;
+
+    var data = new FormData(form);
+    var email = String(data.get("email") || "").trim();
+    if (!email || email.indexOf("@") < 1 || email.indexOf(".") < 0) {
+      fail("That email address doesn't look right.");
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = "One moment…";
+
+    var payload = {
+      email: email,
+      name: String(data.get("name") || "").trim(),
+      website: String(data.get("website") || ""),
+    };
+
+    var res, body;
+    try {
+      res = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+          "apikey": PUBLISHABLE_KEY,
+          "authorization": "Bearer " + PUBLISHABLE_KEY,
+        },
+        body: JSON.stringify(payload),
+      });
+      body = await res.json();
+    } catch (err) {
+      fail("Couldn't reach the server. Check your connection and try again.");
+      return;
+    }
+
+    if (!res.ok || !body || !body.ok) {
+      fail((body && body.error) || "Something went wrong. Try again in a minute.");
+      return;
+    }
+
+    document.getElementById("prayer-when").textContent = body.when_text || "";
+    // The note carries the meeting ID, passcode and what to bring — show it only if there is one.
+    document.getElementById("prayer-note").textContent = body.note || "";
+    document.getElementById("prayer-details").hidden = !body.note;
+    document.getElementById("prayer-link").href = body.zoom_url;
+    document.getElementById("prayer-body").hidden = true;
+    document.getElementById("prayer-done").hidden = false;
+    document.getElementById("prayer-done").scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+})();
+</script>

@@ -1,0 +1,155 @@
+/* Free Saturday Ho'oponopono class — sign-up page (/prayer/).
+   Uses the site's own tokens; adds nothing to the palette. */
+
+.prayer-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1rem;
+}
+
+@media (max-width: 860px) {
+  .prayer-wrap { grid-template-columns: 1fr; gap: 1.75rem; }
+}
+
+.prayer-card {
+  padding: 2rem 2.25rem 2.25rem;
+  background: var(--cream-alt);
+  border: 1px solid var(--sand);
+  border-radius: 18px;
+  box-shadow: 0 1px 2px rgba(26, 26, 26, 0.05), 0 18px 36px -24px rgba(26, 26, 26, 0.25);
+}
+
+@media (max-width: 520px) {
+  .prayer-card { padding: 1.4rem 1.25rem 1.6rem; }
+}
+
+.prayer-card h2 {
+  font-size: clamp(1.5rem, 1.2vw + 1.2rem, 2rem);
+  margin: 0 0 0.75rem;
+}
+
+.prayer-lede {
+  color: var(--charcoal);
+  margin: 0 0 1.75rem;
+  max-width: 46ch;
+}
+
+.prayer-lede em { color: var(--sage); font-style: italic; }
+
+.prayer-field { display: block; margin-bottom: 1rem; }
+
+.prayer-field > span {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sand-dark);
+  margin-bottom: 0.4rem;
+}
+
+.prayer-field > span small {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.prayer-field input {
+  width: 100%;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  color: var(--charcoal);
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-radius: 10px;
+  transition: border-color 180ms var(--ease-out), box-shadow 180ms var(--ease-out);
+}
+
+.prayer-field input::placeholder { color: var(--sand-dark); opacity: 0.75; }
+
+.prayer-field input:focus-visible {
+  outline: none;
+  border-color: var(--sage);
+  box-shadow: 0 0 0 3px rgba(58, 74, 62, 0.16);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .prayer-field input:hover { border-color: var(--sand-dark); }
+}
+
+/* Hidden from people, visible to form-stuffing bots. Not display:none —
+   some bots skip those; off-screen is the version that actually catches them. */
+.prayer-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.prayer-submit {
+  margin-top: 0.5rem;
+  border: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.prayer-submit[disabled] { opacity: 0.7; cursor: default; }
+
+.prayer-small {
+  margin: 1rem 0 0;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--sand-dark);
+  max-width: 48ch;
+}
+
+.prayer-error {
+  margin: 1rem 0 0;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #7a2e2e;
+  background: #f6e9e6;
+  border: 1px solid #e3c7c1;
+  border-radius: 10px;
+}
+
+.prayer-done h2 { color: var(--sage); }
+
+.prayer-when {
+  font-size: 1.05rem;
+  color: var(--charcoal);
+  margin: 0 0 1.25rem;
+}
+
+.prayer-link { display: inline-block; }
+
+/* Meeting ID, passcode, what to bring — the details someone needs at hand when
+   Zoom asks, so they are boxed rather than lost in a paragraph. */
+.prayer-details {
+  margin: 1.25rem 0 0;
+  padding: 0.9rem 1.1rem;
+  background: var(--cream);
+  border: 1px solid var(--sand);
+  border-left: 4px solid var(--sage);
+  border-radius: 10px;
+}
+
+.prayer-note {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 46ch;
+}
+
+.prayer-aside { margin-top: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .prayer-field input { transition: none; }
+}
