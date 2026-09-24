@@ -150,6 +150,11 @@ console.log("[build] brand hub -> /");
   // Branded OG share card, served from the dist root so the same absolute
   // https://kcjugran.github.io/og-card.png URL works from every section.
   copyFile(path.join(hubDir, "og-card.png"), path.join(DIST, "og-card.png"));
+  // The Living Foundations mark, at the dist root for the same reason: the
+  // sign-up emails sent by the `prayer-signup` edge function load it from the
+  // absolute https://kcjugran.github.io/lf-logo.png. Moving or renaming this
+  // breaks the logo in every email already sitting in someone's inbox.
+  copyFile(path.join(hubDir, "lf-logo.png"), path.join(DIST, "lf-logo.png"));
 }
 
 // ---------------------------------------------------------------------------

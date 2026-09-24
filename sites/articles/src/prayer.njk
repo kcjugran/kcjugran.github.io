@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Free Saturday Ho'oponopono Prayer
-description: A free guided Ho'oponopono prayer session, every Saturday on Zoom. Leave your email and the link appears straight away.
+description: A free guided Ho'oponopono prayer session, every Saturday on Zoom. Leave your email and the Zoom link, the timing and what to bring land in your inbox.
 ---
 {# Copy written from Karan's own description of the session (2026-09-24): 45-60 minutes, concept first,
    then breathing, then affirmations, then the prayer, ending with one person's real problem worked
@@ -41,30 +41,52 @@ description: A free guided Ho'oponopono prayer session, every Saturday on Zoom. 
         </div>
 
         <button type="submit" class="hero-cta hero-cta--primary prayer-submit" id="prayer-submit">
-          Get the Zoom link
+          Email me the Zoom link
         </button>
         <p class="prayer-small">
-          Your email is used to send you the class and occasional notes about what I'm running next.
-          No one else gets it, and you can ask me to remove you any time.
+          I'll send the Zoom link, the timing and what to bring straight to your inbox — plus occasional
+          notes about what I'm running next. No one else gets your address, and you can ask me to remove
+          you any time.
         </p>
       </form>
 
       <p class="prayer-error" id="prayer-error" role="alert" hidden></p>
     </div>
 
+    {# The Zoom link is NOT printed here any more (Karan, 2026-09-25 — "that's too casual").
+       It is emailed. The fallback block below only appears if the email could not be sent,
+       so nobody who just gave their address is left with nothing. #}
     <div class="prayer-done" id="prayer-done" hidden>
-      <h2>You're in.</h2>
-      <p class="prayer-when" id="prayer-when"></p>
-      <a class="hero-cta hero-cta--primary prayer-link" id="prayer-link" href="#" target="_blank" rel="noopener">
-        Open the Zoom room
-      </a>
-      <div class="prayer-details" id="prayer-details" hidden>
-        <p class="prayer-note" id="prayer-note"></p>
+      <span class="prayer-tick" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+             stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </span>
+      <h2>Check your inbox.</h2>
+      <p class="prayer-when">
+        I've just emailed the Zoom link, the timing and what to bring to
+        <b id="prayer-addr">your inbox</b>.
+      </p>
+      <div class="prayer-details">
+        <p class="prayer-note" id="prayer-when"></p>
+        <p class="prayer-note">Bring a pen and a notebook — you'll be writing during the session.</p>
       </div>
       <p class="prayer-small">
-        Save this page or the link — it's the same room every Saturday. If Zoom asks for the passcode,
-        it's above.
+        It usually lands within a minute. If you can't see it, look in spam or the Promotions tab and
+        mark it "not spam" — then Saturday's reminder reaches you too. Keep the email: it's the same
+        room every week.
       </p>
+
+      <div id="prayer-fallback" hidden>
+        <p class="prayer-error" style="margin-bottom:1rem">
+          My mail didn't go out just now — here's the link directly so you don't lose it.
+        </p>
+        <a class="hero-cta hero-cta--primary prayer-link" id="prayer-link" href="#" target="_blank" rel="noopener">
+          Open the Zoom room
+        </a>
+        <div class="prayer-details" id="prayer-details" hidden>
+          <p class="prayer-note" id="prayer-note"></p>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -106,7 +128,7 @@ description: A free guided Ho'oponopono prayer session, every Saturday on Zoom. 
     errorBox.textContent = message;
     errorBox.hidden = false;
     button.disabled = false;
-    button.textContent = "Get the Zoom link";
+    button.textContent = "Email me the Zoom link";
   }
 
   form.addEventListener("submit", async function (event) {
@@ -151,11 +173,21 @@ description: A free guided Ho'oponopono prayer session, every Saturday on Zoom. 
       return;
     }
 
-    document.getElementById("prayer-when").textContent = body.when_text || "";
-    // The note carries the meeting ID, passcode and what to bring — show it only if there is one.
-    document.getElementById("prayer-note").textContent = body.note || "";
-    document.getElementById("prayer-details").hidden = !body.note;
-    document.getElementById("prayer-link").href = body.zoom_url;
+    document.getElementById("prayer-addr").textContent = body.email || email;
+    var when = document.getElementById("prayer-when");
+    when.textContent = body.when_text ? "When: " + body.when_text : "";
+    when.hidden = !body.when_text;
+
+    // emailed === false means the letter could not leave. The function hands the
+    // link back in that case only, so nobody who just gave their address is left
+    // with nothing — and KC sees the failed row in the console.
+    if (body.emailed === false && /^https?:\/\//i.test(String(body.zoom_url || ""))) {
+      document.getElementById("prayer-note").textContent = body.note || "";
+      document.getElementById("prayer-details").hidden = !body.note;
+      document.getElementById("prayer-link").href = body.zoom_url;
+      document.getElementById("prayer-fallback").hidden = false;
+    }
+
     document.getElementById("prayer-body").hidden = true;
     document.getElementById("prayer-done").hidden = false;
     document.getElementById("prayer-done").scrollIntoView({ behavior: "smooth", block: "center" });

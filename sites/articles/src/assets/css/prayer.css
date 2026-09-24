@@ -153,3 +153,24 @@
 @media (prefers-reduced-motion: reduce) {
   .prayer-field input { transition: none; }
 }
+
+/* The "check your inbox" state. The Zoom link is not on the page any more, so
+   this tick is what has to carry the reassurance that something happened. */
+.prayer-tick {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.9rem;
+  border-radius: 50%;
+  color: var(--cream);
+  background: var(--sage);
+}
+
+.prayer-tick svg { width: 1.3rem; height: 1.3rem; }
+
+.prayer-details .prayer-note + .prayer-note { margin-top: 0.5rem; }
+
+/* Shown only when the email could not be sent. */
+#prayer-fallback { margin-top: 1.5rem; }
